@@ -1,7 +1,7 @@
 import { Dispatch, PropsWithChildren, SetStateAction, createContext, useEffect, useState } from "react";
 import { ErrorBoundary, FallbackProps } from "react-error-boundary";
 import { IntlProvider } from "react-intl";
-import { AppRoutes } from "../../admin-spa/src/routes";
+import { AppRoutes } from "./routes";
 import { Locale } from "./types";
 
 const UiError = ({ error }: FallbackProps) => (

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { registerSW } from "virtual:pwa-register";
 import { App } from './App.tsx';
-import { API_MOCKING, IS_DEV, IS_PROD } from '../../admin-spa/src/config/index.ts';
+import { API_MOCKING, IS_DEV, IS_PROD } from './config/index.ts';
 import './index.css';
 import { reportWebVitals } from './reportWebVitals';
 
