@@ -1,0 +1,98 @@
+{
+  "name": "react-spa",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "cp .env.example .env.local && vite",
+    "build": "tsc && vite build",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --cache",
+    "preview": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.15",
+    "@heroicons/react": "^2.0.18",
+    "@hookform/resolvers": "3.0.0",
+    "clsx": "1.2.1",
+    "date-fns": "2.29.3",
+    "dompurify": "3.0.1",
+    "history": "^5.3.0",
+    "lodash.debounce": "^4.0.8",
+    "millify": "^6.1.0",
+    "react": "0.0.0-experimental-fdc8c81e0-20230707",
+    "react-dom": "0.0.0-experimental-fdc8c81e0-20230707",
+    "react-error-boundary": "4.0.3",
+    "react-hook-form": "7.43.9",
+    "react-hot-toast": "2.4.0",
+    "react-intl": "6.3.2",
+    "react-router-dom": "6.10.0",
+    "react-virtualized": "^9.22.5",
+    "swr": "^2.2.0",
+    "web-vitals": "^2.1.4",
+    "zod": "3.21.4",
+    "zustand": "4.3.7"
+  },
+  "devDependencies": {
+    "@mswjs/data": "^0.13.0",
+    "@tailwindcss/forms": "^0.5.4",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "14.0.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/lodash.debounce": "^4.0.7",
+    "@types/node": "^20.4.2",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@types/react-router-dom": "5.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "@vitest/coverage-c8": "^0.33.0",
+    "autoprefixer": "^10.4.14",
+    "c8": "^8.0.1",
+    "cypress": "^12.17.1",
+    "eslint": "^8.45.0",
+    "eslint-plugin-jest-dom": "4.0.3",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react-hooks": "0.0.0-experimental-fdc8c81e0-20230707",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "eslint-plugin-testing-library": "5.10.2",
+    "happy-dom": "^10.5.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "msw": "^1.3.0",
+    "postcss": "^8.4.26",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.4",
+    "vite-plugin-pwa": "^0.16.4",
+    "vitest": "^0.33.0",
+    "workbox-window": "^7.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.+(ts|tsx)": [
+      "pnpm lint"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
+  },
+  "msw": {
+    "workerDirectory": "public"
+  },
+  "pnpm": {
+    "overrides": {
+      "tough-cookie@<4.1.3": ">=4.1.3",
+      "@cypress/request@<=2.88.12": ">=3.0.0",
+      "@adobe/css-tools@<4.3.1": ">=4.3.1"
+    }
+  }
+}
