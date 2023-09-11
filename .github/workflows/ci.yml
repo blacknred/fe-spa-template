@@ -1,0 +1,35 @@
+name: CI
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - dev
+jobs:
+  all-cli-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: "20.00"
+      - run: mv .env.example .env
+      - run: yarn install
+      - run: yarn build
+      - run: yarn test:jest
+      - run: yarn lint
+      - run: yarn check-format
+      - run: yarn check-types
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: "20.00"
+      - run: mv .env.example .env
+      - uses: cypress-io/github-action@v5
+        with:
+          build: yarn build
+          start: yarn serve

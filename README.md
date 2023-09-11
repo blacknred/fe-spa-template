@@ -1,4 +1,4 @@
-# React SPA
+# React SPA template
 
 > Showcasing Best Practices For Building React SPA
 
