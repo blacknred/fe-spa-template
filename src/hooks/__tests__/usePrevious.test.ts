@@ -2,7 +2,7 @@ import { act, renderHook } from '@testing-library/react';
 import { describe, expect, test } from 'vitest';
 import { usePrevious } from '../usePrevious';
 
-describe('usePrevious hook testing', () => {
+describe('usePrevious hook', () => {
   test('should return the previous value', () => {
     let y = { x: 8 };
     const { result, rerender } = renderHook(() => usePrevious(y));

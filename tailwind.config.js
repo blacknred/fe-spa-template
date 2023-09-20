@@ -22,7 +22,6 @@ export default {
         // sans: ['var(--font-inter)'],
         // mono: ['var(--font-roboto-mono)'],
         body: ["Inter", "sans-serif"],
-				// title: ["Sora", "sans-serif"],
       },
       filter: ['hover', 'focus'],
       keyframes: ({ theme }) => ({

@@ -4,7 +4,7 @@
 
 ## Stack
 
-TS, React, tailwind, zustand/SWR, react-hook-form, react-intl, pwa
+TS, React, tailwind, zustand/SWR, react-hook-form, react-intl, vite-plugin-pwa
 
 ## Getting Started
 

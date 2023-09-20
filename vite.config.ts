@@ -4,7 +4,6 @@ import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
 import { defineConfig } from 'vite';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
@@ -22,10 +21,10 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      // // injectRegister: 'auto',
+      // injectRegister: 'auto',
       // workbox: {
       //   importScripts: ['./mockServiceWorker.js'],
-      //   // globIgnores: ['**/node_modules/**/*', '**/mockServiceWorker.js'],
+      //   globIgnores: ['**/node_modules/**/*', '**/mockServiceWorker.js'],
       //   globPatterns: ['**/*'],
       //   clientsClaim: true,
       //   skipWaiting: true,

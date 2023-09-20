@@ -1,0 +1,1802 @@
+[
+  {
+    "name": "Energy Drink - Franks Pineapple",
+    "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\n\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
+    "category_id": 5,
+    "author_id": 9,
+    "price": 877.99,
+    "quantity": 94,
+    "barcode": 8379280201880,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 1
+  },
+  {
+    "name": "Lumpfish Black",
+    "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+    "category_id": 4,
+    "author_id": 2,
+    "price": 821.55,
+    "quantity": 80,
+    "barcode": 4047051469147,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 2
+  },
+  {
+    "name": "Split Peas - Yellow, Dry",
+    "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+    "category_id": 4,
+    "author_id": 7,
+    "price": 401.52,
+    "quantity": 84,
+    "barcode": 4373954515563,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 3
+  },
+  {
+    "name": "Bread - 10 Grain",
+    "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+    "category_id": 9,
+    "author_id": 3,
+    "price": 688.12,
+    "quantity": 48,
+    "barcode": 4661137652618,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 4
+  },
+  {
+    "name": "Hog / Sausage Casing - Pork",
+    "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+    "category_id": 10,
+    "author_id": 3,
+    "price": 82.86,
+    "quantity": 43,
+    "barcode": 4519021850648,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 5
+  },
+  {
+    "name": "Container - Foam Dixie 12 Oz",
+    "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+    "category_id": 2,
+    "author_id": 8,
+    "price": 46.1,
+    "quantity": 55,
+    "barcode": 9014520114511,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 6
+  },
+  {
+    "name": "Spice - Montreal Steak Spice",
+    "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
+    "category_id": 1,
+    "author_id": 16,
+    "price": 856.97,
+    "quantity": 74,
+    "barcode": 8715219331346,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 7
+  },
+  {
+    "name": "Cheese - Brick With Pepper",
+    "description": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+    "category_id": 3,
+    "author_id": 17,
+    "price": 102.4,
+    "quantity": 84,
+    "barcode": 3190270621212,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 8
+  },
+  {
+    "name": "Star Fruit",
+    "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
+    "category_id": 1,
+    "author_id": 9,
+    "price": 750.8,
+    "quantity": 90,
+    "barcode": 1255368806316,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 9
+  },
+  {
+    "name": "Shrimp - 16/20, Iqf, Shell On",
+    "description": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+    "category_id": 1,
+    "author_id": 3,
+    "price": 244.59,
+    "quantity": 57,
+    "barcode": 4413315049290,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 10
+  },
+  {
+    "name": "Corn Syrup",
+    "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+    "category_id": 10,
+    "author_id": 13,
+    "price": 263.29,
+    "quantity": 26,
+    "barcode": 8489519540783,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 11
+  },
+  {
+    "name": "Sambuca - Ramazzotti",
+    "description": "In congue. Etiam justo. Etiam pretium iaculis justo.",
+    "category_id": 10,
+    "author_id": 20,
+    "price": 959.55,
+    "quantity": 39,
+    "barcode": 9658202226299,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 12
+  },
+  {
+    "name": "Shrimp - Baby, Warm Water",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
+    "category_id": 5,
+    "author_id": 16,
+    "price": 633.8,
+    "quantity": 55,
+    "barcode": 6276788666466,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 13
+  },
+  {
+    "name": "Potatoes - Yukon Gold 5 Oz",
+    "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+    "category_id": 1,
+    "author_id": 12,
+    "price": 997.52,
+    "quantity": 100,
+    "barcode": 9049778863269,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 14
+  },
+  {
+    "name": "Soup - Base Broth Beef",
+    "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+    "category_id": 2,
+    "author_id": 9,
+    "price": 849.1,
+    "quantity": 72,
+    "barcode": 6813632076596,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 15
+  },
+  {
+    "name": "Cheese - Blue",
+    "description": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.\n\nCurabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+    "category_id": 5,
+    "author_id": 1,
+    "price": 957.95,
+    "quantity": 46,
+    "barcode": 3444946967237,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 16
+  },
+  {
+    "name": "Dasheen",
+    "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+    "category_id": 9,
+    "author_id": 19,
+    "price": 800.75,
+    "quantity": 57,
+    "barcode": 2029731821924,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 17
+  },
+  {
+    "name": "Oil - Pumpkinseed",
+    "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+    "category_id": 9,
+    "author_id": 15,
+    "price": 420.52,
+    "quantity": 93,
+    "barcode": 3935355092472,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 18
+  },
+  {
+    "name": "Lotus Leaves",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
+    "category_id": 6,
+    "author_id": 6,
+    "price": 133.64,
+    "quantity": 82,
+    "barcode": 2911026372304,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 19
+  },
+  {
+    "name": "Tea - Black Currant",
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+    "category_id": 8,
+    "author_id": 13,
+    "price": 591.36,
+    "quantity": 32,
+    "barcode": 3300910522120,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 20
+  },
+  {
+    "name": "Puree - Pear",
+    "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+    "category_id": 2,
+    "author_id": 13,
+    "price": 61.26,
+    "quantity": 96,
+    "barcode": 3048359535183,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 21
+  },
+  {
+    "name": "Sauce - Hoisin",
+    "description": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+    "category_id": 2,
+    "author_id": 11,
+    "price": 830.12,
+    "quantity": 5,
+    "barcode": 1183984253344,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 22
+  },
+  {
+    "name": "Beer - Muskoka Cream Ale",
+    "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+    "category_id": 10,
+    "author_id": 4,
+    "price": 515.56,
+    "quantity": 94,
+    "barcode": 5501578447150,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 23
+  },
+  {
+    "name": "Pork - Chop, Frenched",
+    "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+    "category_id": 1,
+    "author_id": 2,
+    "price": 257.71,
+    "quantity": 56,
+    "barcode": 1352359472529,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 24
+  },
+  {
+    "name": "Frangelico",
+    "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+    "category_id": 4,
+    "author_id": 15,
+    "price": 541.23,
+    "quantity": 75,
+    "barcode": 4267000055339,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 25
+  },
+  {
+    "name": "Chinese Foods - Cantonese",
+    "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
+    "category_id": 1,
+    "author_id": 16,
+    "price": 83.54,
+    "quantity": 98,
+    "barcode": 7470519096262,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 26
+  },
+  {
+    "name": "Wine - Chenin Blanc K.w.v.",
+    "description": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+    "category_id": 2,
+    "author_id": 12,
+    "price": 925.26,
+    "quantity": 81,
+    "barcode": 3304596754786,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 27
+  },
+  {
+    "name": "Beer - Blue",
+    "description": "Phasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
+    "category_id": 10,
+    "author_id": 15,
+    "price": 747.65,
+    "quantity": 35,
+    "barcode": 9225678231456,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 28
+  },
+  {
+    "name": "Appetizer - Asian Shrimp Roll",
+    "description": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+    "category_id": 6,
+    "author_id": 15,
+    "price": 608.1,
+    "quantity": 25,
+    "barcode": 3478500348707,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 29
+  },
+  {
+    "name": "Ecolab - Lime - A - Way 4/4 L",
+    "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+    "category_id": 5,
+    "author_id": 8,
+    "price": 383.69,
+    "quantity": 44,
+    "barcode": 7066436381985,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 30
+  },
+  {
+    "name": "Pancetta",
+    "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+    "category_id": 9,
+    "author_id": 6,
+    "price": 639.32,
+    "quantity": 11,
+    "barcode": 9690542613256,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 31
+  },
+  {
+    "name": "Pomello",
+    "description": "Phasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
+    "category_id": 6,
+    "author_id": 4,
+    "price": 657.63,
+    "quantity": 48,
+    "barcode": 9945207068004,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 32
+  },
+  {
+    "name": "Puree - Mocha",
+    "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+    "category_id": 4,
+    "author_id": 18,
+    "price": 985.93,
+    "quantity": 70,
+    "barcode": 1973848907917,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 33
+  },
+  {
+    "name": "Daikon Radish",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+    "category_id": 10,
+    "author_id": 5,
+    "price": 260.64,
+    "quantity": 57,
+    "barcode": 2369377218344,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 34
+  },
+  {
+    "name": "Black Currants",
+    "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+    "category_id": 4,
+    "author_id": 7,
+    "price": 195.76,
+    "quantity": 13,
+    "barcode": 9231784338623,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 35
+  },
+  {
+    "name": "Wine - White, Riesling, Semi - Dry",
+    "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+    "category_id": 7,
+    "author_id": 11,
+    "price": 321.7,
+    "quantity": 38,
+    "barcode": 5298095393292,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 36
+  },
+  {
+    "name": "Banana - Green",
+    "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+    "category_id": 6,
+    "author_id": 19,
+    "price": 550.08,
+    "quantity": 56,
+    "barcode": 5592361106135,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 37
+  },
+  {
+    "name": "Cake Circle, Paprus",
+    "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+    "category_id": 7,
+    "author_id": 5,
+    "price": 933.92,
+    "quantity": 67,
+    "barcode": 6308035484210,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 38
+  },
+  {
+    "name": "Bread - Burger",
+    "description": "Phasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
+    "category_id": 4,
+    "author_id": 5,
+    "price": 119.94,
+    "quantity": 89,
+    "barcode": 5504397846982,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 39
+  },
+  {
+    "name": "Beef - Ground Lean Fresh",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+    "category_id": 8,
+    "author_id": 18,
+    "price": 259.58,
+    "quantity": 60,
+    "barcode": 2209384998535,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 40
+  },
+  {
+    "name": "Beef - Baby, Liver",
+    "description": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+    "category_id": 1,
+    "author_id": 18,
+    "price": 600.99,
+    "quantity": 43,
+    "barcode": 3896440753796,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 41
+  },
+  {
+    "name": "Nut - Pine Nuts, Whole",
+    "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+    "category_id": 6,
+    "author_id": 13,
+    "price": 225.23,
+    "quantity": 57,
+    "barcode": 6221706085201,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 42
+  },
+  {
+    "name": "Island Oasis - Wildberry",
+    "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+    "category_id": 6,
+    "author_id": 8,
+    "price": 783.22,
+    "quantity": 86,
+    "barcode": 8203290506024,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 43
+  },
+  {
+    "name": "Flower - Commercial Bronze",
+    "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+    "category_id": 2,
+    "author_id": 10,
+    "price": 83.03,
+    "quantity": 12,
+    "barcode": 8132914530875,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 44
+  },
+  {
+    "name": "Dooleys Toffee",
+    "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+    "category_id": 1,
+    "author_id": 17,
+    "price": 936.04,
+    "quantity": 24,
+    "barcode": 9746636193203,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 45
+  },
+  {
+    "name": "Beans - Black Bean, Dry",
+    "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+    "category_id": 1,
+    "author_id": 9,
+    "price": 30.33,
+    "quantity": 21,
+    "barcode": 6115673744983,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 46
+  },
+  {
+    "name": "Crab - Imitation Flakes",
+    "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+    "category_id": 4,
+    "author_id": 11,
+    "price": 525.34,
+    "quantity": 22,
+    "barcode": 9007984670331,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 47
+  },
+  {
+    "name": "Cinnamon - Ground",
+    "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+    "category_id": 5,
+    "author_id": 7,
+    "price": 323.54,
+    "quantity": 65,
+    "barcode": 1873520242045,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 48
+  },
+  {
+    "name": "Sauce - Salsa",
+    "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+    "category_id": 5,
+    "author_id": 19,
+    "price": 467.55,
+    "quantity": 45,
+    "barcode": 1134226246220,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 49
+  },
+  {
+    "name": "Chocolate - Dark",
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+    "category_id": 5,
+    "author_id": 6,
+    "price": 528.36,
+    "quantity": 31,
+    "barcode": 4874858360808,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 50
+  },
+  {
+    "name": "Syrup - Monin - Passion Fruit",
+    "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+    "category_id": 8,
+    "author_id": 2,
+    "price": 916.15,
+    "quantity": 72,
+    "barcode": 5307979818790,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 51
+  },
+  {
+    "name": "Cheese - Feta",
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+    "category_id": 4,
+    "author_id": 12,
+    "price": 489.99,
+    "quantity": 76,
+    "barcode": 5030447421959,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 52
+  },
+  {
+    "name": "Vermouth - Sweet, Cinzano",
+    "description": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+    "category_id": 9,
+    "author_id": 19,
+    "price": 935.42,
+    "quantity": 95,
+    "barcode": 2207875733241,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 53
+  },
+  {
+    "name": "Wine - Penfolds Koonuga Hill",
+    "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+    "category_id": 3,
+    "author_id": 15,
+    "price": 16.83,
+    "quantity": 57,
+    "barcode": 7414147553063,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 54
+  },
+  {
+    "name": "Oregano - Fresh",
+    "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+    "category_id": 7,
+    "author_id": 6,
+    "price": 357.8,
+    "quantity": 45,
+    "barcode": 9707454930804,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 55
+  },
+  {
+    "name": "Basil - Seedlings Cookstown",
+    "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+    "category_id": 5,
+    "author_id": 11,
+    "price": 406.91,
+    "quantity": 22,
+    "barcode": 9069311032961,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 56
+  },
+  {
+    "name": "Turnip - White",
+    "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+    "category_id": 2,
+    "author_id": 20,
+    "price": 918.8,
+    "quantity": 91,
+    "barcode": 6712364892893,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 57
+  },
+  {
+    "name": "Bread - Pumpernickel",
+    "description": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+    "category_id": 2,
+    "author_id": 5,
+    "price": 677.66,
+    "quantity": 44,
+    "barcode": 5863973358658,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 58
+  },
+  {
+    "name": "Wine - Penfolds Koonuga Hill",
+    "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+    "category_id": 2,
+    "author_id": 2,
+    "price": 648.27,
+    "quantity": 3,
+    "barcode": 3786177470263,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 59
+  },
+  {
+    "name": "Cauliflower",
+    "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+    "category_id": 3,
+    "author_id": 15,
+    "price": 345.05,
+    "quantity": 37,
+    "barcode": 2444334926663,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 60
+  },
+  {
+    "name": "Wine - Black Tower Qr",
+    "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "category_id": 9,
+    "author_id": 13,
+    "price": 125.62,
+    "quantity": 71,
+    "barcode": 4999683083592,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 61
+  },
+  {
+    "name": "Coffee Beans - Chocolate",
+    "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+    "category_id": 10,
+    "author_id": 8,
+    "price": 820.77,
+    "quantity": 13,
+    "barcode": 5549815772260,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 62
+  },
+  {
+    "name": "Sauce - Sesame Thai Dressing",
+    "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+    "category_id": 9,
+    "author_id": 4,
+    "price": 616.9,
+    "quantity": 55,
+    "barcode": 8982599656698,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 63
+  },
+  {
+    "name": "Sauce - Alfredo",
+    "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+    "category_id": 2,
+    "author_id": 3,
+    "price": 247.22,
+    "quantity": 72,
+    "barcode": 2462802067243,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 64
+  },
+  {
+    "name": "Island Oasis - Pina Colada",
+    "description": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
+    "category_id": 4,
+    "author_id": 16,
+    "price": 216.06,
+    "quantity": 26,
+    "barcode": 1507966459921,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 65
+  },
+  {
+    "name": "Sobe - Green Tea",
+    "description": "Phasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
+    "category_id": 6,
+    "author_id": 12,
+    "price": 354.85,
+    "quantity": 40,
+    "barcode": 5176893282421,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 66
+  },
+  {
+    "name": "Flour - Chickpea",
+    "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+    "category_id": 5,
+    "author_id": 8,
+    "price": 216.99,
+    "quantity": 60,
+    "barcode": 6907970024733,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 67
+  },
+  {
+    "name": "Bag - Clear 7 Lb",
+    "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+    "category_id": 9,
+    "author_id": 6,
+    "price": 553.25,
+    "quantity": 12,
+    "barcode": 5933710032857,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 68
+  },
+  {
+    "name": "Langers - Ruby Red Grapfruit",
+    "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+    "category_id": 7,
+    "author_id": 16,
+    "price": 303.26,
+    "quantity": 50,
+    "barcode": 2830233025865,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 69
+  },
+  {
+    "name": "Fish - Base, Bouillion",
+    "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+    "category_id": 6,
+    "author_id": 11,
+    "price": 790.76,
+    "quantity": 48,
+    "barcode": 2083167533065,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 70
+  },
+  {
+    "name": "Bread - Sour Sticks With Onion",
+    "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+    "category_id": 3,
+    "author_id": 15,
+    "price": 317.49,
+    "quantity": 91,
+    "barcode": 6450351152490,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 71
+  },
+  {
+    "name": "Wine - Sawmill Creek Autumn",
+    "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.",
+    "category_id": 9,
+    "author_id": 11,
+    "price": 723.88,
+    "quantity": 54,
+    "barcode": 9064693659832,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 72
+  },
+  {
+    "name": "Beef - Top Butt",
+    "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+    "category_id": 9,
+    "author_id": 10,
+    "price": 620.84,
+    "quantity": 13,
+    "barcode": 8901854618848,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 73
+  },
+  {
+    "name": "Sauce - Marinara",
+    "description": "Fusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+    "category_id": 6,
+    "author_id": 17,
+    "price": 8.15,
+    "quantity": 86,
+    "barcode": 6441001176023,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 74
+  },
+  {
+    "name": "Tomato - Tricolor Cherry",
+    "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+    "category_id": 1,
+    "author_id": 17,
+    "price": 455.55,
+    "quantity": 22,
+    "barcode": 6918964161071,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 75
+  },
+  {
+    "name": "Lotus Root",
+    "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+    "category_id": 10,
+    "author_id": 19,
+    "price": 886.62,
+    "quantity": 64,
+    "barcode": 7979650285171,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 76
+  },
+  {
+    "name": "Sugar - Monocystal / Rock",
+    "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.",
+    "category_id": 5,
+    "author_id": 17,
+    "price": 709.51,
+    "quantity": 28,
+    "barcode": 9117983325359,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 77
+  },
+  {
+    "name": "Pie Filling - Apple",
+    "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+    "category_id": 9,
+    "author_id": 14,
+    "price": 16.99,
+    "quantity": 90,
+    "barcode": 5001138001786,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 78
+  },
+  {
+    "name": "Juice - Orange",
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+    "category_id": 6,
+    "author_id": 8,
+    "price": 464.66,
+    "quantity": 19,
+    "barcode": 4946632665411,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 79
+  },
+  {
+    "name": "Bread Foccacia Whole",
+    "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+    "category_id": 10,
+    "author_id": 1,
+    "price": 664.96,
+    "quantity": 14,
+    "barcode": 9079714949687,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 80
+  },
+  {
+    "name": "Tamarillo",
+    "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+    "category_id": 9,
+    "author_id": 7,
+    "price": 274.01,
+    "quantity": 23,
+    "barcode": 4353241119345,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 81
+  },
+  {
+    "name": "Coffee - Decafenated",
+    "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "category_id": 9,
+    "author_id": 19,
+    "price": 725.76,
+    "quantity": 71,
+    "barcode": 7461953030131,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 82
+  },
+  {
+    "name": "Dc - Frozen Momji",
+    "description": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+    "category_id": 3,
+    "author_id": 12,
+    "price": 744.67,
+    "quantity": 61,
+    "barcode": 7795698620084,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 83
+  },
+  {
+    "name": "Daves Island Stinger",
+    "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.",
+    "category_id": 10,
+    "author_id": 6,
+    "price": 718.36,
+    "quantity": 24,
+    "barcode": 1165227613781,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 84
+  },
+  {
+    "name": "Wine - White, Lindemans Bin 95",
+    "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+    "category_id": 5,
+    "author_id": 20,
+    "price": 732.35,
+    "quantity": 8,
+    "barcode": 9320530681552,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 85
+  },
+  {
+    "name": "Pork - Sausage, Medium",
+    "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+    "category_id": 4,
+    "author_id": 16,
+    "price": 117.69,
+    "quantity": 2,
+    "barcode": 4843119304118,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 86
+  },
+  {
+    "name": "Wiberg Super Cure",
+    "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+    "category_id": 7,
+    "author_id": 15,
+    "price": 721.12,
+    "quantity": 46,
+    "barcode": 8014897442129,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 87
+  },
+  {
+    "name": "Bar Mix - Lime",
+    "description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+    "category_id": 4,
+    "author_id": 13,
+    "price": 299.85,
+    "quantity": 68,
+    "barcode": 2272517245750,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 88
+  },
+  {
+    "name": "Juice - Apple, 1.36l",
+    "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+    "category_id": 8,
+    "author_id": 1,
+    "price": 996.3,
+    "quantity": 85,
+    "barcode": 7509166464020,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 89
+  },
+  {
+    "name": "Longos - Assorted Sandwich",
+    "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+    "category_id": 4,
+    "author_id": 14,
+    "price": 106.53,
+    "quantity": 26,
+    "barcode": 8366100472862,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 90
+  },
+  {
+    "name": "Rice - Wild",
+    "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+    "category_id": 1,
+    "author_id": 15,
+    "price": 941.54,
+    "quantity": 20,
+    "barcode": 6507747178356,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 91
+  },
+  {
+    "name": "Salmon - Canned",
+    "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+    "category_id": 2,
+    "author_id": 16,
+    "price": 507.73,
+    "quantity": 21,
+    "barcode": 3614732444040,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 92
+  },
+  {
+    "name": "Wine - Niagara,vqa Reisling",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
+    "category_id": 5,
+    "author_id": 19,
+    "price": 374.61,
+    "quantity": 30,
+    "barcode": 7163333971512,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 93
+  },
+  {
+    "name": "Liquid Aminios Acid - Braggs",
+    "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\n\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
+    "category_id": 1,
+    "author_id": 14,
+    "price": 722.61,
+    "quantity": 97,
+    "barcode": 5161764154327,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 94
+  },
+  {
+    "name": "Compound - Raspberry",
+    "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+    "category_id": 6,
+    "author_id": 5,
+    "price": 715.45,
+    "quantity": 64,
+    "barcode": 8779469776262,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 95
+  },
+  {
+    "name": "Kaffir Lime Leaves",
+    "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+    "category_id": 4,
+    "author_id": 19,
+    "price": 150.71,
+    "quantity": 14,
+    "barcode": 3500016973239,
+    "preview": "http://dummyimage.com/250x250.png/cc0000/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 96
+  },
+  {
+    "name": "Longos - Grilled Salmon With Bbq",
+    "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "category_id": 4,
+    "author_id": 20,
+    "price": 218.99,
+    "quantity": 64,
+    "barcode": 9272956420151,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 97
+  },
+  {
+    "name": "Juice - Orange, 341 Ml",
+    "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+    "category_id": 2,
+    "author_id": 19,
+    "price": 67.95,
+    "quantity": 75,
+    "barcode": 3343046973604,
+    "preview": "http://dummyimage.com/250x250.png/dddddd/000000",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 98
+  },
+  {
+    "name": "Tendrils - Baby Pea, Organic",
+    "description": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
+    "category_id": 7,
+    "author_id": 11,
+    "price": 468.45,
+    "quantity": 59,
+    "barcode": 3525898092750,
+    "preview": "http://dummyimage.com/250x250.png/5fa2dd/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 99
+  },
+  {
+    "name": "Island Oasis - Banana Daiquiri",
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+    "category_id": 1,
+    "author_id": 3,
+    "price": 640.97,
+    "quantity": 84,
+    "barcode": 5588182680647,
+    "preview": "http://dummyimage.com/250x250.png/ff4444/ffffff",
+    "images": [
+      "http://dummyimage.com/500x500.png/cc0000/ffffff",
+      "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+      "http://dummyimage.com/500x500.png/dddddd/000000"
+    ],
+    "createdAt": "2023-09-02T18:22:20.903Z",
+    "updatedAt": "2023-09-02T18:22:20.903Z",
+    "id": 100
+  }
+]

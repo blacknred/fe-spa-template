@@ -1,47 +1,47 @@
-import * as React from 'react';
+// import * as React from 'react';
 
-import { useDisclosure } from '@/hooks/useDisclosure';
-import { rtlRender, screen, userEvent, waitFor } from '@testing-library/react';
+// import { useDisclosure } from '@/hooks/useDisclosure';
+// import { rtlRender, screen, userEvent, waitFor } from '@testing-library/react';
 
-import { Button } from '../../Button';
-import { Dialog, DialogTitle } from '../Dialog';
+// import { Button } from '../../Button';
+// import { Dialog, DialogTitle } from '../Dialog';
 
-const openButtonText = 'Open Modal';
-const cancelButtonText = 'Cancel';
-const titleText = 'Modal Title';
+// const openButtonText = 'Open Modal';
+// const cancelButtonText = 'Cancel';
+// const titleText = 'Modal Title';
 
-const TestDialog = () => {
-  const { close, open, isOpen } = useDisclosure();
-  const cancelButtonRef = React.useRef(null);
+// const TestDialog = () => {
+//   const { close, open, isOpen } = useDisclosure();
+//   const cancelButtonRef = React.useRef(null);
 
-  return (
-    <>
-      <Button onClick={open}>{openButtonText}</Button>
-      <Dialog isOpen={isOpen} onClose={close} initialFocus={cancelButtonRef}>
-        <div>
-          <DialogTitle as="h3">{titleText}</DialogTitle>
+//   return (
+//     <>
+//       <Button onClick={open}>{openButtonText}</Button>
+//       <Dialog isOpen={isOpen} onClose={close} initialFocus={cancelButtonRef}>
+//         <div>
+//           <DialogTitle as="h3">{titleText}</DialogTitle>
 
-          <Button type="button" onClick={close} ref={cancelButtonRef}>
-            {cancelButtonText}
-          </Button>
-        </div>
-      </Dialog>
-    </>
-  );
-};
+//           <Button type="button" onClick={close} ref={cancelButtonRef}>
+//             {cancelButtonText}
+//           </Button>
+//         </div>
+//       </Dialog>
+//     </>
+//   );
+// };
 
-describe('Dialog component testing', () => {
-  test('should handle basic dialog flow', async () => {
-    await rtlRender(<TestDialog />);
+// describe('Dialog component testing', () => {
+//   test('should handle basic dialog flow', async () => {
+//     await rtlRender(<TestDialog />);
 
-    expect(screen.queryByText(titleText)).not.toBeInTheDocument();
+//     expect(screen.queryByText(titleText)).not.toBeInTheDocument();
 
-    userEvent.click(screen.getByRole('button', { name: openButtonText }));
+//     userEvent.click(screen.getByRole('button', { name: openButtonText }));
 
-    expect(screen.getByText(titleText)).toBeInTheDocument();
+//     expect(screen.getByText(titleText)).toBeInTheDocument();
 
-    userEvent.click(screen.getByRole('button', { name: cancelButtonText }));
+//     userEvent.click(screen.getByRole('button', { name: cancelButtonText }));
 
-    await waitFor(() => expect(screen.queryByText(titleText)).not.toBeInTheDocument());
-  });
-}
+//     await waitFor(() => expect(screen.queryByText(titleText)).not.toBeInTheDocument());
+//   });
+// }

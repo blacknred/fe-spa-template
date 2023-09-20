@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 import { useDisclosure } from '../useDisclosure';
 
-describe('useDisclosure hook testing', () => {
+describe('useDisclosure hook', () => {
   test('should open the state', () => {
     const { result } = renderHook(() => useDisclosure());
     expect(result.current.isOpen).toBe(false);

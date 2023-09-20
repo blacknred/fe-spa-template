@@ -25,11 +25,7 @@
     "paths": {
       "@/*": ["src/*"]
     },
-
-    // "types": [
-    //   "vite-plugin-pwa/client"
-    // ],
   },
-  "include": ["src", "src/types/vite-env.d.ts", "src/setupTest.ts"],
+  "include": ["src", "vite-env.d.ts", "src/setupTest.ts", "src/__mocks__"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
