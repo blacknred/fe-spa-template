@@ -27,7 +27,7 @@ export const useAuth = create<AuthStore>()((set, get) => ({
   startSession: () => getAuth()
     .then((res) => {
       if (res.ok) return res.json();
-      throw res.statusText
+      throw res.statusText;
     })
     .then(get().setProfile)
     .then(() => {

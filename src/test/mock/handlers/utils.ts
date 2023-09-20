@@ -138,7 +138,7 @@ export function findAndCount<T extends BaseEntity = BaseEntity>(
       const isDesc = order === Order.desc;
       const first = a[field as keyof T];
       const second = b[field as keyof T];
-      
+
       if (first > second) return isDesc ? -1 : 1;
       else if (first < second) return isDesc ? 1 : -1;
       return 0;

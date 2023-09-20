@@ -1,78 +1,71 @@
 // import { discussionGenerator } from '@/test/data-generators';
-// import { render, screen, userEvent, waitFor, within } from '@/test/test-utils';
-// import { formatDate } from '@/utils/format';
+import { createProduct, getUser, mockProduct, render, screen, userEvent, waitFor, within } from '@/test/test-utils';
+import { Products } from '../Products';
+import { Mock, vitest } from 'vitest';
+import { Role } from '@/features/users';
 
-// import { Discussions } from '../Discussions';
+beforeAll(() => {
+  vitest.spyOn(console, 'error').mockImplementation(() => { });
+});
 
-// beforeAll(() => {
-//   jest.spyOn(console, 'error').mockImplementation(() => {});
-// });
+afterAll(() => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+  (console.error as Mock).mockRestore();
+});
 
-// afterAll(() => {
-//   (console.error as jest.Mock).mockRestore();
-// });
+describe("Products", () => {
+  test('should create, render and delete products', async () => {
+    await render(<Products />, { user: getUser(Role.admin) });
+    const product = mockProduct();
 
-// test('should create, render and delete discussions', async () => {
-//   await render(<Discussions />);
+    // list products
 
-//   const newDiscussion = discussionGenerator();
+    expect(await screen.findByText(/no entries/i)).toBeDefined();
 
-//   expect(await screen.findByText(/no entries/i)).toBeInTheDocument();
+    // create product
 
-//   userEvent.click(screen.getByRole('button', { name: /create discussion/i }));
+    void userEvent.click(screen.getByRole('button', { name: /create product/i }));
+    const drawer = screen.getByRole('dialog', { name: /create product/i });
 
-//   const drawer = screen.getByRole('dialog', {
-//     name: /create discussion/i,
-//   });
+    const categoryField = within(drawer).getByText(/categoryId/i);
+    const nameField = within(drawer).getByText(/name/i);
+    const descriptionField = within(drawer).getByText(/description/i);
+    const priceField = within(drawer).getByText(/price/i);
+    const quantityField = within(drawer).getByText(/quantity/i);
+    const previewField = within(drawer).getByText(/preview/i);
 
-//   const titleField = within(drawer).getByText(/title/i);
-//   const bodyField = within(drawer).getByText(/body/i);
+    void userEvent.type(categoryField, product.category_id.toString());
+    void userEvent.type(nameField, product.name);
+    void userEvent.type(descriptionField, product.description);
+    void userEvent.type(priceField, product.price.toString());
+    void userEvent.type(quantityField, product.quantity.toString());
+    void userEvent.type(previewField, product.preview);
 
-//   userEvent.type(titleField, newDiscussion.title);
-//   userEvent.type(bodyField, newDiscussion.body);
+    const submitButton = within(drawer).getByRole('button', { name: /submit/i });
+    void userEvent.click(submitButton);
+    await waitFor(() => expect(drawer).not.toBeDefined());
 
-//   const submitButton = within(drawer).getByRole('button', {
-//     name: /submit/i,
-//   });
+    // const row = screen.getByRole('row', {
+    //   name: `${product.name} ${formatDate(newDiscussion.createdAt)} View Delete Discussion`,
+    // });
+    // expect(within(row).getByRole('cell', { name: product.name })).toBeDefined();
 
-//   userEvent.click(submitButton);
+    // delete product
 
-//   await waitFor(() => expect(drawer).not.toBeInTheDocument());
+    void userEvent.click(within(row).getByRole('button', { name: /delete product/i }));
+    const confirmationDialog = screen.getByRole('dialog', { name: /delete product/i });
+    const confirmationDeleteButton = within(confirmationDialog).getByRole('button', {
+      name: /delete product/i,
+    });
 
-//   const row = screen.getByRole('row', {
-//     name: `${newDiscussion.title} ${formatDate(newDiscussion.createdAt)} View Delete Discussion`,
-//   });
+    void userEvent.click(confirmationDeleteButton);
+    await screen.findByText(/product deleted/i);
 
-//   expect(
-//     within(row).getByRole('cell', {
-//       name: newDiscussion.title,
-//     })
-//   ).toBeInTheDocument();
-
-//   userEvent.click(
-//     within(row).getByRole('button', {
-//       name: /delete discussion/i,
-//     })
-//   );
-
-//   const confirmationDialog = screen.getByRole('dialog', {
-//     name: /delete discussion/i,
-//   });
-
-//   const confirmationDeleteButton = within(confirmationDialog).getByRole('button', {
-//     name: /delete discussion/i,
-//   });
-
-//   userEvent.click(confirmationDeleteButton);
-
-//   await screen.findByText(/discussion deleted/i);
-
-//   expect(
-//     within(row).queryByRole('cell', {
-//       name: newDiscussion.title,
-//     })
-//   ).not.toBeInTheDocument();
-// });
+    expect(
+      within(row).queryByRole('cell', { name: newDiscussion.title })
+    ).not.toBeDefined();
+  });
+});
 
 
 

@@ -1,6 +1,7 @@
 import { BaseEntity } from "@/types";
-import { ChevronUpDownIcon } from "@heroicons/react/24/solid";
 import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
+import { ChevronUpDownIcon } from "@heroicons/react/24/solid";
+import { useIntl } from "react-intl";
 
 type TableColumn<T> = {
   title: string;
@@ -15,10 +16,13 @@ type Props<T> = {
 };
 
 export const Table = <T extends BaseEntity>({ data, columns }: Props<T>) => {
+  const intl = useIntl();
+
   if (!data?.length) {
     return (
       <div className="flex flex-col items-center justify-center bg-white dark:bg-black h-80">
         <ExclamationCircleIcon className="w-10 h-10" />
+        <h4>{intl.formatMessage({ id: 'ui.empty' })}</h4>
       </div>
     );
   }
@@ -65,3 +69,4 @@ export const Table = <T extends BaseEntity>({ data, columns }: Props<T>) => {
     </div>
   );
 };
+

@@ -15,6 +15,7 @@
   "ui.delete": "Удалить",
   "ui.return": "Вернуться",
   "ui.pagination": "Показано {offset} - {nextOffset} из {total} записей",
+  "ui.empty": "Нет записей",
 
   "title.404": "Ресурс не найден",
   "title.auth": "Войти в систему",

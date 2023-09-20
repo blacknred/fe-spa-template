@@ -15,6 +15,7 @@
   "ui.delete": "Delete",
   "ui.return": "Return",
   "ui.pagination": "Showing {offset} - {nextOffset} of {total} entries",
+  "ui.empty": "No entries",
 
   "title.404": "Resource not found",
   "title.auth": "Login",

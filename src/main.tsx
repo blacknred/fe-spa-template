@@ -15,7 +15,7 @@ function render() {
 }
 
 if (IS_DEV && API_MOCKING) {
-  void import('@/mocks/browser').then(({ worker }) => worker?.start().then(render))
+  void import('@/test/mock/browser.ts').then(({ worker }) => worker?.start().then(render))
 } else {
   render();
 }
