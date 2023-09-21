@@ -29,6 +29,7 @@
   "title.dashboard.total.products": "Total products",
   "title.categories": "Categories",
   "title.categories.observe": "Observe categories",
+  "title.categories.all": "All categories",
   "title.category": "Category",
   "title.category.details": "Category details",
   "title.category.create": "Create category",
@@ -48,6 +49,7 @@
   "title.user.create": "Register",
   "title.user.update": "Update profile",
   "title.user.delete": "Delete profile",
+  "title.user.roles.all": "All roles",
 
   "field.name": "Name",
   "field.image": "Image",

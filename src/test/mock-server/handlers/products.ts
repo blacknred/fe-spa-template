@@ -164,7 +164,7 @@ export const productsHandlers = [
       })!;
 
       const newProduct = db.product.update({
-        where: { id: { equals: category.id } },
+        where: { id: { equals: product.id } },
         data: { ...dto, updatedAt: new Date().toISOString() },
       });
 

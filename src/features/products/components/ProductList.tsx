@@ -1,8 +1,8 @@
 import { Avatar, Link, OffsetPagination, Spinner, Table } from '@/components/Elements';
 import { Form, InputField } from '@/components/Form';
 import { CategorySelectField } from '@/features/categories';
-import { defaultSearchParams } from '@/utils';
-import { format, parseISO } from 'date-fns';
+import { Order } from '@/types';
+import { defaultSearchParams, formatDate } from '@/utils';
 import debounce from 'lodash.debounce';
 import { FormEvent, useCallback } from 'react';
 import { WrappedComponentProps, injectIntl } from 'react-intl';
@@ -11,7 +11,6 @@ import { GetProductsDto, getProductsDto, useProducts } from '../api/getProducts'
 import type { Product } from "../types";
 import { CreateProduct } from './CreateProduct';
 import { DeleteProduct } from './DeleteProduct';
-import { Order } from '@/types';
 
 export const ProductList = injectIntl(({ intl }: WrappedComponentProps) => {
   const [params, setParams] = useSearchParams(defaultSearchParams);
@@ -30,21 +29,12 @@ export const ProductList = injectIntl(({ intl }: WrappedComponentProps) => {
     const { name, value } = e.target as HTMLInputElement;
     setParams(params => {
       params.set('offset', '0');
-      if (value) params.set(name, value.toString());
+      if (value) params.set(name, value);
       else params.delete(name);
       return params;
     })
   }, [setParams])
 
-  if (isLoading) {
-    return (
-      <div className="w-full h-48 flex justify-center items-center">
-        <Spinner size='lg' />
-      </div>
-    )
-  }
-
-  if (!data) return null;
 
   return (
     <>
@@ -54,7 +44,7 @@ export const ProductList = injectIntl(({ intl }: WrappedComponentProps) => {
         id="get-products"
         options={{
           defaultValues: {
-            categoryId: +params.get('categoryId')! ?? undefined,
+            categoryId: params.get('categoryId')! ?? undefined,
             text: params.get('text') ?? undefined,
           },
         }}
@@ -79,78 +69,88 @@ export const ProductList = injectIntl(({ intl }: WrappedComponentProps) => {
         )}
       </Form>
 
-      <Table<Product>
-        data={data.items}
-        columns={[
-          {
-            title: "Id",
-            field: 'id',
-            cell: ({ entry: { id } }) => <Link to={`./${id}`}>#{id}</Link>,
-          },
-          {
-            title: intl.formatMessage({ id: 'field.image' }),
-            field: "preview",
-            cell: ({ entry: { preview, name } }) => <Avatar src={preview} alt={name} variant='square' />,
-          },
-          {
-            title: intl.formatMessage({ id: 'field.name' }),
-            field: "name",
-            onSort
-          },
-          {
-            title: intl.formatMessage({ id: 'field.category' }),
-            field: 'category',
-            cell: ({ entry: { category } }) => <span>{category.name}</span>,
-            onSort,
-          },
-          {
-            title: intl.formatMessage({ id: 'field.price' }),
-            field: "price",
-            cell: ({ entry: { price } }) => <span>{intl.formatNumber(price)}</span>,
-            onSort
-          },
-          {
-            title: intl.formatMessage({ id: 'field.barcode' }),
-            field: "barcode",
-          },
-          {
-            title: intl.formatMessage({ id: 'field.quantity' }),
-            field: "quantity",
-            onSort
-          },
-          {
-            title: intl.formatMessage({ id: 'field.author' }),
-            field: "author",
-            cell: ({ entry: { author } }) => <span>{author.name}</span>
-          },
-          {
-            title: intl.formatMessage({ id: 'field.createdAt' }),
-            field: 'createdAt',
-            onSort,
-            cell({ entry: { createdAt } }) {
-              if (!createdAt) return <span>-</span>;
-              return <span>{format(parseISO(createdAt), 'yyyy-LL-dd')}</span>;
-            },
-          },
-          {
-            title: "",
-            field: "id",
-            cell: ({ entry }) => <DeleteProduct product={entry} onSuccess={refetch} />
-          }
-        ]}
-      />
+      {isLoading && (
+        <div className="w-full h-48 flex justify-center items-center">
+          <Spinner size='lg' />
+        </div>
+      )}
 
-      <OffsetPagination
-        total={data.total}
-        limit={data.items.length}
-        offset={+params.get('offset')!}
-        onChange={(offset) => {
-          setParams(params => {
-            params.set('offset', offset.toString());
-            return params;
-          })
-        }}
-      />
+      {data && (
+        <>
+          <Table<Product>
+            data={data.items}
+            columns={[
+              {
+                title: "Id",
+                field: 'id',
+                cell: ({ entry: { id } }) => <Link to={`./${id}`}>#{id}</Link>,
+              },
+              {
+                title: intl.formatMessage({ id: 'field.image' }),
+                field: "preview",
+                cell: ({ entry: { preview, name } }) => <Avatar src={preview} alt={name} variant='square' />,
+              },
+              {
+                title: intl.formatMessage({ id: 'field.name' }),
+                field: "name",
+                onSort
+              },
+              {
+                title: intl.formatMessage({ id: 'field.category' }),
+                field: 'category',
+                cell: ({ entry: { category } }) => <span>{category.name}</span>,
+                onSort,
+              },
+              {
+                title: intl.formatMessage({ id: 'field.price' }),
+                field: "price",
+                cell: ({ entry: { price } }) => <span>{intl.formatNumber(price)}</span>,
+                onSort
+              },
+              {
+                title: intl.formatMessage({ id: 'field.barcode' }),
+                field: "barcode",
+              },
+              {
+                title: intl.formatMessage({ id: 'field.quantity' }),
+                field: "quantity",
+                onSort
+              },
+              {
+                title: intl.formatMessage({ id: 'field.author' }),
+                field: "author",
+                cell: ({ entry: { author } }) => <span>{author.name}</span>
+              },
+              {
+                title: intl.formatMessage({ id: 'field.createdAt' }),
+                field: 'createdAt',
+                onSort,
+                cell({ entry: { createdAt } }) {
+                  if (!createdAt) return <span>-</span>;
+                  return <span>{formatDate(createdAt)}</span>;
+                },
+              },
+              {
+                title: "",
+                field: "id",
+                cell: ({ entry }) => <DeleteProduct product={entry} onSuccess={refetch} />
+              }
+            ]}
+          />
+
+          <OffsetPagination
+            total={data.total}
+            limit={data.items.length}
+            offset={+params.get('offset')!}
+            onChange={(offset) => {
+              setParams(params => {
+                params.set('offset', offset.toString());
+                return params;
+              })
+            }}
+          />
+        </>
+      )}
     </>
   );
 });

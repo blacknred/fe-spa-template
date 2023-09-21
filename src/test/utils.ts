@@ -1,7 +1,5 @@
 import { App } from '@/App';
 import { API_URL } from '@/config';
-import { CreateCategoryDto } from '@/features/categories';
-import { CreateProductDto } from '@/features/products';
 import { CreateUserDto } from '@/features/users';
 import {
   render as rtlRender,
@@ -20,6 +18,7 @@ export const render = async (
   { route = '/', user, ...rest }: Record<string, unknown> = {},
 ) => {
   if (user) {
+    // authenticate
     await fetch(API_URL + `/auth`, {
       body: JSON.stringify(user),
       method: 'POST',
@@ -41,29 +40,30 @@ export const render = async (
       ...screen.queryAllByTestId(/loading/i),
       ...screen.queryAllByText(/loading/i),
     ],
-    { timeout: 4000 },
+    { timeout: 3000 },
   );
 
   return returnValue;
 };
 
-export const mockUser = (options?: CreateUserDto) => ({
+export const mockUser = (options?: Partial<CreateUserDto>) => ({
   name: 'Hercule Eskrigge',
   email: 'heskrigge0@youtube.com',
   password: '0p9o8i7u',
   ...options,
 });
 
-export const mockCategory = (options?: CreateCategoryDto) => ({
+export const mockCategory = (options?: Record<string, unknown>) => ({
   name: 'Sneakers',
   image: 'http://dummyimage.com/250x250.png/5fa2dd/ffffff',
+  createdAt: new Date().toISOString(),
   ...options,
 });
 
-export const mockProduct = (options?: CreateProductDto) => ({
+export const mockProduct = (options?: Record<string, unknown>) => ({
   name: 'PUMA All-Day Active',
   description: 'Men`s sports shoes All Day Active for an active lifestyle.',
-  category_id: 1,
+  categoryId: 1,
   price: 877.99,
   quantity: 94,
   preview: 'http://dummyimage.com/250x250.png/dddddd/000000',
@@ -72,20 +72,21 @@ export const mockProduct = (options?: CreateProductDto) => ({
     'http://dummyimage.com/500x500.png/5fa2dd/ffffff',
     'http://dummyimage.com/500x500.png/dddddd/000000',
   ],
+  createdAt: new Date().toISOString(),
   ...options,
 });
 
-export const createUser = (options?: CreateUserDto) => {
+export const createUser = (options?: Record<string, unknown>) => {
   const user = mockUser(options);
   return db.user.create(user);
 };
 
-export const createCategory = (options?: CreateCategoryDto) => {
+export const createCategory = (options?: Record<string, unknown>) => {
   const category = mockCategory(options);
   return db.category.create(category);
 };
 
-export const createProduct = (options?: CreateProductDto) => {
+export const createProduct = (options?: Record<string, unknown>) => {
   const product = mockProduct(options);
   return db.product.create(product);
 };

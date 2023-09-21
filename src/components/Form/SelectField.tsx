@@ -30,7 +30,7 @@ export const SelectField = ({ label, options, error, className, defaultValue, re
       {...registration}
     >
       {options.map(({ label, value }) => (
-        <option key={label?.toString()} value={value}>
+        <option key={value?.toString()} value={value}>
           {label}
         </option>
       ))}

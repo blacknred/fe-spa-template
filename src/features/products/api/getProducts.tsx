@@ -5,7 +5,7 @@ import { z } from "zod";
 import { Product } from "../types";
 
 export const getProductsDto = paginatedSearchParamsSchema.extend({
-  categoryId: z.number().min(1).optional(),
+  categoryId: z.string().min(1).optional(),
 });
 
 export type GetProductsDto = z.infer<typeof getProductsDto>;

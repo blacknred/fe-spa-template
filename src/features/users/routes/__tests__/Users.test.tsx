@@ -1,78 +1,28 @@
-// import { discussionGenerator } from '@/test/data-generators';
-// import { render, screen, userEvent, waitFor, within } from '@/test/test-utils';
-// import { formatDate } from '@/utils/format';
 
-// import { Discussions } from '../Discussions';
+import { createUser, render, screen, within } from '@/test/utils';
+import { formatDate } from '@/utils';
+import { Mock } from 'vitest';
+import { Users } from '../Users';
 
-// beforeAll(() => {
-//   jest.spyOn(console, 'error').mockImplementation(() => {});
-// });
+beforeAll(() => {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  vitest.spyOn(console, 'error').mockImplementation(() => { });
+});
 
-// afterAll(() => {
-//   (console.error as jest.Mock).mockRestore();
-// });
+afterAll(() => {
+  (console.error as Mock).mockRestore();
+});
 
-// test('should create, render and delete discussions', async () => {
-//   await render(<Discussions />);
+describe('Users', () => {
+  test('should render users', async () => {
+    const user = createUser();
 
-//   const newDiscussion = discussionGenerator();
+    await render(<Users />, { user });
 
-//   expect(await screen.findByText(/no entries/i)).toBeInTheDocument();
+    const row = screen.getByRole('row', {
+      name: `${user.name} ${formatDate(user.createdAt)}`,
+    });
 
-//   userEvent.click(screen.getByRole('button', { name: /create discussion/i }));
-
-//   const drawer = screen.getByRole('dialog', {
-//     name: /create discussion/i,
-//   });
-
-//   const titleField = within(drawer).getByText(/title/i);
-//   const bodyField = within(drawer).getByText(/body/i);
-
-//   userEvent.type(titleField, newDiscussion.title);
-//   userEvent.type(bodyField, newDiscussion.body);
-
-//   const submitButton = within(drawer).getByRole('button', {
-//     name: /submit/i,
-//   });
-
-//   userEvent.click(submitButton);
-
-//   await waitFor(() => expect(drawer).not.toBeInTheDocument());
-
-//   const row = screen.getByRole('row', {
-//     name: `${newDiscussion.title} ${formatDate(newDiscussion.createdAt)} View Delete Discussion`,
-//   });
-
-//   expect(
-//     within(row).getByRole('cell', {
-//       name: newDiscussion.title,
-//     })
-//   ).toBeInTheDocument();
-
-//   userEvent.click(
-//     within(row).getByRole('button', {
-//       name: /delete discussion/i,
-//     })
-//   );
-
-//   const confirmationDialog = screen.getByRole('dialog', {
-//     name: /delete discussion/i,
-//   });
-
-//   const confirmationDeleteButton = within(confirmationDialog).getByRole('button', {
-//     name: /delete discussion/i,
-//   });
-
-//   userEvent.click(confirmationDeleteButton);
-
-//   await screen.findByText(/discussion deleted/i);
-
-//   expect(
-//     within(row).queryByRole('cell', {
-//       name: newDiscussion.title,
-//     })
-//   ).not.toBeInTheDocument();
-// });
-
-
-
+    expect(within(row).getByRole('cell', { name: user.name })).toBeDefined();
+  });
+})

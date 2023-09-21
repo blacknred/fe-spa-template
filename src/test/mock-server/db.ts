@@ -14,7 +14,7 @@ const models = {
     city: nullable(String),
     image: nullable(String),
     password: String,
-    role: () => Role.manager,
+    role: () => Role.admin,
     online: () => false,
     createdAt: () => new Date().toISOString(),
     updatedAt: () => new Date().toISOString(),
@@ -56,7 +56,7 @@ export const resetDb = () => window.localStorage.clear();
 export const initializeDb = () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const database = loadDb();
-  console.log(database);
+  console.table(database);
 
   Object.entries(db).forEach(([key, model]) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call

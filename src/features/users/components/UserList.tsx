@@ -1,15 +1,14 @@
 import { Avatar, Link, OffsetPagination, Spinner, Table } from '@/components/Elements';
 import { Form, InputField, SelectField } from '@/components/Form';
-import { defaultSearchParams } from '@/utils';
-import { format, parseISO } from 'date-fns';
+import { Order } from '@/types';
+import { defaultSearchParams, formatDate } from '@/utils';
 import debounce from 'lodash.debounce';
 import { FormEvent, useCallback } from 'react';
 import { WrappedComponentProps, injectIntl } from 'react-intl';
 import { useSearchParams } from 'react-router-dom';
-import { roleOptions } from '..';
+import { getRoleOptions } from '..';
 import { GetUsersDto, getUsersDto, useUsers } from '../api';
 import { Role, User } from "../types";
-import { Order } from '@/types';
 
 export const UserList = injectIntl(({ intl }: WrappedComponentProps) => {
   const [params, setParams] = useSearchParams(defaultSearchParams);
@@ -34,16 +33,6 @@ export const UserList = injectIntl(({ intl }: WrappedComponentProps) => {
     })
   }, [setParams])
 
-  if (isLoading) {
-    return (
-      <div className="w-full h-48 flex justify-center items-center">
-        <Spinner size="lg" />
-      </div>
-    )
-  }
-
-  if (!data) return null;
-
   return (
     <>
       <Form<GetUsersDto, typeof getUsersDto>
@@ -58,82 +47,92 @@ export const UserList = injectIntl(({ intl }: WrappedComponentProps) => {
         }}
       >
         {({ register }) => (
-            <>
-              <SelectField
-                placeholder={intl.formatMessage({ id: 'field.role' })}
-                registration={register('role', { onChange })}
-                className="w-full sm:w-[200px]"
-                options={roleOptions}
-              />
-              <InputField
-                placeholder={intl.formatMessage({ id: 'ui.search' }) + "..."}
-                className="w-full sm:w-[300px]"
-                registration={register('text', {
-                  onChange: debounce(onChange, 1000),
-                })}
-              />
-            </>
-          )}
+          <>
+            <SelectField
+              placeholder={intl.formatMessage({ id: 'field.role' })}
+              registration={register('role', { onChange })}
+              className="w-full sm:w-[200px]"
+              options={getRoleOptions(intl.formatMessage({ id: 'title.user.roles.all' }))}
+            />
+            <InputField
+              placeholder={intl.formatMessage({ id: 'ui.search' }) + "..."}
+              className="w-full sm:w-[300px]"
+              registration={register('text', {
+                onChange: debounce(onChange, 1000),
+              })}
+            />
+          </>
+        )}
       </Form>
 
-      <Table<User>
-        data={data.items}
-        columns={[
-          {
-            title: "Id",
-            field: 'id',
-            cell: ({ entry: { id } }) => <Link to={`./${id}`}>#{id}</Link>,
-          },
-          {
-            title: intl.formatMessage({ id: 'field.image' }),
-            field: "image",
-            cell: ({ entry: { image, name } }) => <Avatar src={image} alt={name} variant='round' />,
-          },
+      {isLoading && (
+        <div className="w-full h-48 flex justify-center items-center">
+          <Spinner size="lg" />
+        </div>
+      )}
 
-          {
-            title: intl.formatMessage({ id: 'field.name' }),
-            field: "name",
-            onSort
-          },
-          {
-            title: intl.formatMessage({ id: 'field.city' }),
-            field: 'city',
-            onSort
-          },
-          {
-            title: intl.formatMessage({ id: 'field.role' }),
-            cell: ({ entry: { role } }) => <span>{role.toUpperCase()}</span>,
-            field: "role",
-            onSort
-          },
-          {
-            title: intl.formatMessage({ id: 'field.createdAt' }),
-            field: 'createdAt',
-            onSort,
-            cell({ entry: { createdAt } }) {
-              if (!createdAt) return <span>-</span>;
-              return <span>{format(parseISO(createdAt), 'yyyy-LL-dd')}</span>;
-            },
-          },
-          {
-            title: intl.formatMessage({ id: 'field.online' }),
-            field: "id",
-            cell: ({ entry: { online } }) => <span>{online ? 'online' : 'offline'}</span>
-          }
-        ]}
-      />
+      {data && (
+        <>
+          <Table<User>
+            data={data.items}
+            columns={[
+              {
+                title: "Id",
+                field: 'id',
+                cell: ({ entry: { id } }) => <Link to={`./${id}`}>#{id}</Link>,
+              },
+              {
+                title: intl.formatMessage({ id: 'field.image' }),
+                field: "image",
+                cell: ({ entry: { image, name } }) => <Avatar src={image} alt={name} variant='round' />,
+              },
 
-      <OffsetPagination
-        total={data.total}
-        limit={data.items.length}
-        offset={+params.get('offset')!}
-        onChange={(offset) => {
-          setParams(params => {
-            params.set('offset', offset.toString());
-            return params;
-          })
-        }}
-      />
+              {
+                title: intl.formatMessage({ id: 'field.name' }),
+                field: "name",
+                onSort
+              },
+              {
+                title: intl.formatMessage({ id: 'field.city' }),
+                field: 'city',
+                onSort
+              },
+              {
+                title: intl.formatMessage({ id: 'field.role' }),
+                cell: ({ entry: { role } }) => <span>{role.toUpperCase()}</span>,
+                field: "role",
+                onSort
+              },
+              {
+                title: intl.formatMessage({ id: 'field.createdAt' }),
+                field: 'createdAt',
+                onSort,
+                cell({ entry: { createdAt } }) {
+                  if (!createdAt) return <span>-</span>;
+                  return <span>{formatDate(createdAt)}</span>;
+                },
+              },
+              {
+                title: intl.formatMessage({ id: 'field.online' }),
+                field: "id",
+                cell: ({ entry: { online } }) => <span>{online ? 'online' : 'offline'}</span>
+              }
+            ]}
+          />
+
+          <OffsetPagination
+            total={data.total}
+            limit={data.items.length}
+            offset={+params.get('offset')!}
+            onChange={(offset) => {
+              setParams(params => {
+                params.set('offset', offset.toString());
+                return params;
+              })
+            }}
+          />
+        </>
+      )}
     </>
   );
 });

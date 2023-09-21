@@ -29,6 +29,7 @@
   "title.dashboard.total.products": "Всего товаров",
   "title.categories": "Категории",
   "title.categories.observe": "Ознакомиться с категориями",
+  "title.categories.all": "Все категории",
   "title.category": "Категория",
   "title.category.details": "Описание категории",
   "title.category.create": "Создать категорию",
@@ -48,6 +49,7 @@
   "title.user.create": "Зарегистрироваться",
   "title.user.update": "Обновить профиль",
   "title.user.delete": "Удалить профиль",
+  "title.user.roles.all": "Все роли",
 
   "field.name": "Название",
   "field.image": "Изображение",

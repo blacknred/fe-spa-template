@@ -1,16 +1,15 @@
 import { Avatar, Link, OffsetPagination, Spinner, Table } from '@/components/Elements';
 import { Form, InputField } from '@/components/Form';
-import { format, parseISO } from 'date-fns';
+import { Order } from '@/types';
+import { defaultSearchParams, formatDate } from '@/utils';
 import debounce from 'lodash.debounce';
+import { FormEvent, useCallback } from 'react';
 import { WrappedComponentProps, injectIntl } from 'react-intl';
 import { useSearchParams } from 'react-router-dom';
 import { GetCategoriesDto, getCategoriesDto, useCategories } from '../api';
 import type { Category } from "../types";
-import { DeleteCategory } from './DeleteCategory';
-import { defaultSearchParams } from '@/utils';
 import { CreateCategory } from './CreateCategory';
-import { FormEvent, useCallback } from 'react';
-import { Order } from '@/types';
+import { DeleteCategory } from './DeleteCategory';
 
 export const CategoryList = injectIntl(({ intl }: WrappedComponentProps) => {
   const [params, setParams] = useSearchParams(defaultSearchParams);
@@ -34,16 +33,7 @@ export const CategoryList = injectIntl(({ intl }: WrappedComponentProps) => {
       return params;
     })
   }, [setParams])
-  
-  if (isLoading) {
-    return (
-      <div className="w-full h-48 flex justify-center items-center">
-        <Spinner size="lg" />
-      </div>
-    )
-  }
 
-  if (!data) return null;
 
   return (
     <>
@@ -71,53 +61,63 @@ export const CategoryList = injectIntl(({ intl }: WrappedComponentProps) => {
         )}
       </Form>
 
-      <Table<Category>
-        data={data.items}
-        columns={[
-          {
-            title: "Id",
-            field: 'id',
-            cell: ({ entry: { id } }) => <Link to={`./${id}`}>#{id}</Link>,
-          },
-          {
-            title: intl.formatMessage({ id: 'field.image' }),
-            field: "image",
-            cell: ({ entry: { image } }) => <Avatar src={image} variant='square' />,
-          },
+      {isLoading && (
+        <div className="w-full h-48 flex justify-center items-center">
+          <Spinner size="lg" />
+        </div>
+      )}
 
-          {
-            title: intl.formatMessage({ id: 'field.name' }),
-            field: "name",
-            onSort
-          },
-          {
-            title: intl.formatMessage({ id: 'field.createdAt' }),
-            field: 'createdAt',
-            onSort,
-            cell({ entry: { createdAt } }) {
-              if (!createdAt) return <span>-</span>;
-              return <span>{format(parseISO(createdAt), 'yyyy-LL-dd')}</span>;
-            },
-          },
-          {
-            title: "",
-            field: "id",
-            cell: ({ entry }) => <DeleteCategory category={entry} onSuccess={refetch} />
-          }
-        ]}
-      />
+      {data && (
+        <>
+          <Table<Category>
+            data={data.items}
+            columns={[
+              {
+                title: "Id",
+                field: 'id',
+                cell: ({ entry: { id } }) => <Link to={`./${id}`}>#{id}</Link>,
+              },
+              {
+                title: intl.formatMessage({ id: 'field.image' }),
+                field: "image",
+                cell: ({ entry: { image } }) => <Avatar src={image} variant='square' />,
+              },
 
-      <OffsetPagination
-        total={data.total}
-        limit={data.items.length}
-        offset={+params.get('offset')!}
-        onChange={(offset) => {
-          setParams(params => {
-            params.set('offset', offset.toString());
-            return params;
-          })
-        }}
-      />
+              {
+                title: intl.formatMessage({ id: 'field.name' }),
+                field: "name",
+                onSort
+              },
+              {
+                title: intl.formatMessage({ id: 'field.createdAt' }),
+                field: 'createdAt',
+                onSort,
+                cell({ entry: { createdAt } }) {
+                  if (!createdAt) return <span>-</span>;
+                  return <span>{formatDate(createdAt)}</span>;
+                },
+              },
+              {
+                title: "",
+                field: "id",
+                cell: ({ entry }) => <DeleteCategory category={entry} onSuccess={refetch} />
+              }
+            ]}
+          />
+
+          <OffsetPagination
+            total={data.total}
+            limit={data.items.length}
+            offset={+params.get('offset')!}
+            onChange={(offset) => {
+              setParams(params => {
+                params.set('offset', offset.toString());
+                return params;
+              })
+            }}
+          />
+        </>
+      )}
     </>
   )
 });

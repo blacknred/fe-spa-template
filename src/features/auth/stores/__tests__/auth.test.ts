@@ -1,6 +1,5 @@
-import { act, renderHook } from '@/test/utils';
 import { Role } from '@/features/users';
-import { getUser } from '@/test/utils';
+import { act, createUser, renderHook } from '@/test/utils';
 import { Mock } from 'vitest';
 import { useAuth } from '../auth';
 
@@ -20,7 +19,8 @@ describe('useAuth hook', () => {
   });
 
   test('should start and clear auth session', () => {
-    const user = getUser(Role.admin);
+    const user = createUser();
+
     fetchSpy.mockResolvedValue({
       ok: true,
       status: 200,

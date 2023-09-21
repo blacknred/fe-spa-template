@@ -117,21 +117,16 @@ export function buildPaginatedQuery(
   const { text, 'sort.order': order, 'sort.field': field, ...rest } = dto;
 
   return {
+    orderBy: { [field]: order },
     where: {
-      ...(text && {
-        name: {
-          contains: text,
-        },
-      }),
-      ...Object.keys(rest).map((key) => ({
-        [key]: {
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          equals: rest[key as keyof typeof rest],
-        },
-      })),
-    },
-    orderBy: {
-      [field]: order,
+      ...(text && { name: { contains: text } }),
+      ...Object.keys(rest).reduce(
+        (all, key) =>
+          Object.assign(all, {
+            [key]: { equals: +rest[key as keyof typeof rest]! },
+          }),
+        {},
+      ),
     },
   } as QueryOptions;
 }

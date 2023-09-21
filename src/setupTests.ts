@@ -15,4 +15,3 @@ afterEach(() => {
   server.resetHandlers();
   resetDb();
 });
-

@@ -1,7 +1,7 @@
 import { Category } from '..';
 
-export const categoryOptions = (categories: Category[]) => [
-  { label: 'All categories', value: 0 },
+export const getCategoryOptions = (categories: Category[], defaultLabel = 'All categories') => [
+  { label: defaultLabel, value: '' },
   ...categories.map(({ id: value, name: label }) => ({
     label,
     value,

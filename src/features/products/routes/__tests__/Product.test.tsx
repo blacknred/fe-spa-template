@@ -1,131 +1,69 @@
-// import { useParams as useMockParams } from 'react-router-dom';
+import {
+  createCategory,
+  createProduct,
+  createUser,
+  render,
+  screen,
+  userEvent,
+  waitFor,
+  within,
+} from '@/test/utils';
+import { useParams as useMockParams } from 'react-router-dom';
+import { Mock } from 'vitest';
+import { Product } from '../Product';
 
-// import {
-//   render,
-//   screen,
-//   userEvent,
-//   waitFor,
-//   mockProduct,
-//   mockUser,
-//   within,
-//   getUser,
-// } from '@/test/utils';
+vitest.mock('react-router-dom', () => ({
+  // eslint-disable-next-line @typescript-eslint/no-misused-promises
+  ...vitest.importActual('react-router-dom'),
+  useParams: vitest.fn(),
+}));
 
-// import { Product } from '../Product';
-// import { Role } from '@/features/users';
-// import { Mock } from 'vitest';
+describe("Product", () => {
+  test('should render and update product', async () => {
+    const user = createUser();
+    const category = createCategory({ authorId: user.id });
+    const product = createProduct({ authorId: user.id, categoryId: category.id });
 
-// vitest.mock('react-router-dom', () => ({
-//   // eslint-disable-next-line @typescript-eslint/no-misused-promises
-//   ...vitest.importActual('react-router-dom'),
-//   useParams: vitest.fn(),
-// }));
+    (useMockParams as Mock).mockImplementation(() => ({
+      id: product.id,
+    }));
 
+    await render(<Product />, { user });
 
-// const renderProduct = async () => {
-//   const user = getUser(Role.admin);
-//   const product = await getProduct(1);
+    // render
+    await screen.findByText(product.name);
+    expect(screen.getByText(product.name)).toBeDefined();
 
-//   (useMockParams as Mock).mockImplementation(() => ({
-//     id: product.id,
-//   }));
+    // update
+    const updateText = '-Updated';
+    const updateNumber = '11';
 
-//   const utils = await render(<Product />, { user });
-//   await screen.findByText(fakeDiscussion.title);
+    void userEvent.click(screen.getByRole('button', { name: /update product/i }));
 
-//   return {
-//     ...utils,
-//     fakeUser,
-//     fakeDiscussion,
-//   };
-// };
+    const drawer = screen.getByRole('dialog', { name: /update product/i });
+    const categoryField = within(drawer).getByText(/category/i);
+    const titleField = within(drawer).getByText(/title/i);
+    const descriptionField = within(drawer).getByText(/description/i);
+    const priceField = within(drawer).getByText(/price/i);
+    const quantityField = within(drawer).getByText(/quantity/i);
+    const imageField = within(drawer).getByText(/image/i);
+    void userEvent.selectOptions(categoryField, category.id.toString());
+    void userEvent.type(titleField, updateText);
+    void userEvent.type(descriptionField, updateText);
+    void userEvent.type(priceField, updateNumber);
+    void userEvent.type(quantityField, updateNumber);
+    void userEvent.type(imageField, updateText);
 
-// describe("Product", () => {
-//   test('should render product', async () => {
-//     const { fakeDiscussion } = await renderDiscussion();
-//     expect(screen.getByText(fakeDiscussion.body)).toBeInTheDocument();
-//   });
+    const submitButton = within(drawer).getByRole('button', { name: /submit/i });
+    void userEvent.click(submitButton);
 
-//   test('should update discussion', async () => {
-//     const { fakeDiscussion } = await renderDiscussion();
+    await waitFor(() => expect(drawer).not.toBeDefined());
 
-//     const titleUpdate = '-Updated';
-//     const bodyUpdate = '-Updated';
-
-//     userEvent.click(screen.getByRole('button', { name: /update product/i }));
-//     const drawer = screen.getByRole('dialog', { name: /update product/i });
-
-//     const titleField = within(drawer).getByText(/title/i);
-//     const bodyField = within(drawer).getByText(/body/i);
-
-//     userEvent.type(titleField, titleUpdate);
-//     userEvent.type(bodyField, bodyUpdate);
-
-//     const submitButton = within(drawer).getByRole('button', { name: /submit/i });
-
-//     userEvent.click(submitButton);
-
-//     await waitFor(() => expect(drawer).not.toBeInTheDocument());
-
-//     const newTitle = `${fakeDiscussion.title}${titleUpdate}`;
-//     const newBody = `${fakeDiscussion.body}${bodyUpdate}`;
-
-//     expect(screen.getByText(newTitle)).toBeInTheDocument();
-//     expect(screen.getByText(newBody)).toBeInTheDocument();
-//   });
-
-//   // test('should create and delete a comment on the discussion', async () => {
-//   //   await renderDiscussion();
-
-//   //   const comment = 'Hello World';
-
-//   //   userEvent.click(screen.getByRole('button', { name: /create comment/i }));
-
-//   //   const drawer = screen.getByRole('dialog', {
-//   //     name: /create comment/i,
-//   //   });
-
-//   //   const bodyField = within(drawer).getByText(/body/i);
-
-//   //   userEvent.type(bodyField, comment);
-
-//   //   const submitButton = within(drawer).getByRole('button', {
-//   //     name: /submit/i,
-//   //   });
-
-//   //   userEvent.click(submitButton);
-
-//   //   await waitFor(() => expect(drawer).not.toBeInTheDocument());
-
-//   //   const commentsList = screen.getByRole('list', {
-//   //     name: 'comments',
-//   //   });
-
-//   //   const commentElements = within(commentsList).getAllByRole('listitem');
-
-//   //   const commentElement = commentElements[0];
-
-//   //   expect(commentElement).toBeInTheDocument();
-
-//   //   const deleteCommentButton = within(commentElement).getByRole('button', {
-//   //     name: /delete comment/i,
-//   //     exact: false,
-//   //   });
-
-//   //   userEvent.click(deleteCommentButton);
-
-//   //   const confirmationDialog = screen.getByRole('dialog', {
-//   //     name: /delete comment/i,
-//   //   });
-
-//   //   const confirmationDeleteButton = within(confirmationDialog).getByRole('button', {
-//   //     name: /delete/i,
-//   //   });
-
-//   //   userEvent.click(confirmationDeleteButton);
-
-//   //   await screen.findByText(/comment deleted/i);
-
-//   //   expect(within(commentsList).queryByText(comment)).not.toBeInTheDocument();
-//   // });
-// })
+    await screen.findByText(product.name);
+    expect(screen.getByText(`${product.name}${updateText}`)).toBeDefined();
+    expect(screen.getByText(`${product.description}${updateText}`)).toBeDefined();
+    expect(screen.getByText(`${product.preview}${updateText}`)).toBeDefined();
+    expect(screen.getByText(`${product.price}${updateNumber}`)).toBeDefined();
+    expect(screen.getByText(`${product.quantity}${updateNumber}`)).toBeDefined();
+  });
+})
