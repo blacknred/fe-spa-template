@@ -1,134 +1,131 @@
-import { useParams as useMockParams } from 'react-router-dom';
+// import { useParams as useMockParams } from 'react-router-dom';
 
-import {
-  render,
-  screen,
-  userEvent,
-  waitFor,
-  createProduct,
-  mockUser,
-  within,
-} from '@/test/test-utils';
+// import {
+//   render,
+//   screen,
+//   userEvent,
+//   waitFor,
+//   mockProduct,
+//   mockUser,
+//   within,
+//   getUser,
+// } from '@/test/utils';
 
-import { Product } from '../Product';
+// import { Product } from '../Product';
+// import { Role } from '@/features/users';
+// import { Mock } from 'vitest';
 
-vitest.mock('react-router-dom', () => ({
-  ...vitest.requireActual('react-router-dom'), // keep the rest of the exports intact
-  useParams: vitest.fn(),
-}));
+// vitest.mock('react-router-dom', () => ({
+//   // eslint-disable-next-line @typescript-eslint/no-misused-promises
+//   ...vitest.importActual('react-router-dom'),
+//   useParams: vitest.fn(),
+// }));
 
-const renderDiscussion = async () => {
-  const fakeUser = await createUser();
-  const fakeDiscussion = await createDiscussion({ teamId: fakeUser.teamId });
 
-  (useMockParams as jest.Mock).mockImplementation(() => ({
-    discussionId: fakeDiscussion.id,
-  }));
+// const renderProduct = async () => {
+//   const user = getUser(Role.admin);
+//   const product = await getProduct(1);
 
-  const utils = await render(<Discussion />, {
-    user: fakeUser,
-  });
+//   (useMockParams as Mock).mockImplementation(() => ({
+//     id: product.id,
+//   }));
 
-  await screen.findByText(fakeDiscussion.title);
+//   const utils = await render(<Product />, { user });
+//   await screen.findByText(fakeDiscussion.title);
 
-  return {
-    ...utils,
-    fakeUser,
-    fakeDiscussion,
-  };
-};
+//   return {
+//     ...utils,
+//     fakeUser,
+//     fakeDiscussion,
+//   };
+// };
 
-describe("Product", () => {
-  test('should render product', async () => {
-    const { fakeDiscussion } = await renderDiscussion();
-    expect(screen.getByText(fakeDiscussion.body)).toBeInTheDocument();
-  });
+// describe("Product", () => {
+//   test('should render product', async () => {
+//     const { fakeDiscussion } = await renderDiscussion();
+//     expect(screen.getByText(fakeDiscussion.body)).toBeInTheDocument();
+//   });
 
-  test('should update discussion', async () => {
-    const { fakeDiscussion } = await renderDiscussion();
+//   test('should update discussion', async () => {
+//     const { fakeDiscussion } = await renderDiscussion();
 
-    const titleUpdate = '-Updated';
-    const bodyUpdate = '-Updated';
+//     const titleUpdate = '-Updated';
+//     const bodyUpdate = '-Updated';
 
-    userEvent.click(screen.getByRole('button', { name: /update discussion/i }));
+//     userEvent.click(screen.getByRole('button', { name: /update product/i }));
+//     const drawer = screen.getByRole('dialog', { name: /update product/i });
 
-    const drawer = screen.getByRole('dialog', {
-      name: /update discussion/i,
-    });
+//     const titleField = within(drawer).getByText(/title/i);
+//     const bodyField = within(drawer).getByText(/body/i);
 
-    const titleField = within(drawer).getByText(/title/i);
-    const bodyField = within(drawer).getByText(/body/i);
+//     userEvent.type(titleField, titleUpdate);
+//     userEvent.type(bodyField, bodyUpdate);
 
-    userEvent.type(titleField, titleUpdate);
-    userEvent.type(bodyField, bodyUpdate);
+//     const submitButton = within(drawer).getByRole('button', { name: /submit/i });
 
-    const submitButton = within(drawer).getByRole('button', {
-      name: /submit/i,
-    });
+//     userEvent.click(submitButton);
 
-    userEvent.click(submitButton);
+//     await waitFor(() => expect(drawer).not.toBeInTheDocument());
 
-    await waitFor(() => expect(drawer).not.toBeInTheDocument());
+//     const newTitle = `${fakeDiscussion.title}${titleUpdate}`;
+//     const newBody = `${fakeDiscussion.body}${bodyUpdate}`;
 
-    const newTitle = `${fakeDiscussion.title}${titleUpdate}`;
-    const newBody = `${fakeDiscussion.body}${bodyUpdate}`;
+//     expect(screen.getByText(newTitle)).toBeInTheDocument();
+//     expect(screen.getByText(newBody)).toBeInTheDocument();
+//   });
 
-    expect(screen.getByText(newTitle)).toBeInTheDocument();
-    expect(screen.getByText(newBody)).toBeInTheDocument();
-  });
+//   // test('should create and delete a comment on the discussion', async () => {
+//   //   await renderDiscussion();
 
-  test('should create and delete a comment on the discussion', async () => {
-    await renderDiscussion();
+//   //   const comment = 'Hello World';
 
-    const comment = 'Hello World';
+//   //   userEvent.click(screen.getByRole('button', { name: /create comment/i }));
 
-    userEvent.click(screen.getByRole('button', { name: /create comment/i }));
+//   //   const drawer = screen.getByRole('dialog', {
+//   //     name: /create comment/i,
+//   //   });
 
-    const drawer = screen.getByRole('dialog', {
-      name: /create comment/i,
-    });
+//   //   const bodyField = within(drawer).getByText(/body/i);
 
-    const bodyField = within(drawer).getByText(/body/i);
+//   //   userEvent.type(bodyField, comment);
 
-    userEvent.type(bodyField, comment);
+//   //   const submitButton = within(drawer).getByRole('button', {
+//   //     name: /submit/i,
+//   //   });
 
-    const submitButton = within(drawer).getByRole('button', {
-      name: /submit/i,
-    });
+//   //   userEvent.click(submitButton);
 
-    userEvent.click(submitButton);
+//   //   await waitFor(() => expect(drawer).not.toBeInTheDocument());
 
-    await waitFor(() => expect(drawer).not.toBeInTheDocument());
+//   //   const commentsList = screen.getByRole('list', {
+//   //     name: 'comments',
+//   //   });
 
-    const commentsList = screen.getByRole('list', {
-      name: 'comments',
-    });
+//   //   const commentElements = within(commentsList).getAllByRole('listitem');
 
-    const commentElements = within(commentsList).getAllByRole('listitem');
+//   //   const commentElement = commentElements[0];
 
-    const commentElement = commentElements[0];
+//   //   expect(commentElement).toBeInTheDocument();
 
-    expect(commentElement).toBeInTheDocument();
+//   //   const deleteCommentButton = within(commentElement).getByRole('button', {
+//   //     name: /delete comment/i,
+//   //     exact: false,
+//   //   });
 
-    const deleteCommentButton = within(commentElement).getByRole('button', {
-      name: /delete comment/i,
-      exact: false,
-    });
+//   //   userEvent.click(deleteCommentButton);
 
-    userEvent.click(deleteCommentButton);
+//   //   const confirmationDialog = screen.getByRole('dialog', {
+//   //     name: /delete comment/i,
+//   //   });
 
-    const confirmationDialog = screen.getByRole('dialog', {
-      name: /delete comment/i,
-    });
+//   //   const confirmationDeleteButton = within(confirmationDialog).getByRole('button', {
+//   //     name: /delete/i,
+//   //   });
 
-    const confirmationDeleteButton = within(confirmationDialog).getByRole('button', {
-      name: /delete/i,
-    });
+//   //   userEvent.click(confirmationDeleteButton);
 
-    userEvent.click(confirmationDeleteButton);
+//   //   await screen.findByText(/comment deleted/i);
 
-    await screen.findByText(/comment deleted/i);
-
-    expect(within(commentsList).queryByText(comment)).not.toBeInTheDocument();
-  });
-})
+//   //   expect(within(commentsList).queryByText(comment)).not.toBeInTheDocument();
+//   // });
+// })

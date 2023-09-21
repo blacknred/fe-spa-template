@@ -13,7 +13,7 @@ type Props = WrappedComponentProps & {
 export const DeleteProduct = injectIntl(({ onSuccess, product, intl }: Props) => {
   const { isPending, isDone, mutate } = useDeleteProduct(product.id);
 
-  useEffect(() => void (isDone && onSuccess), [isDone, onSuccess]);
+  useEffect(() => void (isDone && onSuccess()), [isDone, onSuccess]);
 
   const label = intl.formatMessage({ id: 'title.product.delete' });
 

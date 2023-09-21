@@ -1,7 +1,8 @@
 import { API_URL } from '@/config';
 import { CreateAuthDto, createAuthDto } from '@/features/auth';
+import { Role } from '@/features/users';
 import { rest } from 'msw';
-import { default as users } from '../data/user.json';
+import { db } from '../db';
 import {
   HttpError,
   TOKEN,
@@ -10,22 +11,32 @@ import {
   res,
   validate,
 } from './utils';
-import { Role } from '@/features/users';
 
 export const authHandlers = [
   rest.post(`${API_URL}/auth`, async (req, _, ctx) => {
     try {
       const dto = validate<CreateAuthDto>(createAuthDto, await req.json());
-      const user = users.find(({ email }) => email == dto.email);
+
+      const user = db.user.findFirst({
+        where: { email: { equals: dto.email } },
+      });
+
       if (!user) {
         throw new HttpError(409, formatError('email', 'Email not in use'));
       }
+
       if (![Role.admin, Role.manager].includes(user.role as Role)) {
         throw new HttpError(403, formatError('email', 'No access'));
       }
+
       if (dto.password !== user.password) {
         throw new HttpError(409, formatError('password', 'Invalid password'));
       }
+
+      db.user.update({
+        where: { id: { equals: user.id } },
+        data: { online: true },
+      })!;
 
       // no Refresh token cookie due msw cookie issue
       return res(

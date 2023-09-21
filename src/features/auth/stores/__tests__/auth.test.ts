@@ -1,7 +1,6 @@
-import { act, renderHook } from '@testing-library/react-hooks';
-
+import { act, renderHook } from '@/test/utils';
 import { Role } from '@/features/users';
-import { getUser } from '@/test/test-utils';
+import { getUser } from '@/test/utils';
 import { Mock } from 'vitest';
 import { useAuth } from '../auth';
 

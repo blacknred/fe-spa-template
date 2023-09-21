@@ -12,10 +12,9 @@ type Props = WrappedComponentProps & {
 
 export const OffsetPagination = injectIntl(({ intl, total, offset, limit, onChange }: Props) => {
   if (total < 1 || !limit) return null;
-  const totalPages = total / limit
-  const pages = [1, totalPages];
-  // Array(Math.ceil(total / limit)).fill(null)
-  // if (pages.length > 5) pages.length = 5;
+  // const totalPages = total / limit
+  const pages = Array(Math.ceil(total / limit)).fill(null)
+  if (pages.length > 5) pages.length = 5;
   const nextOffset = total < (offset + limit) ? total : offset + limit;
 
   return (
@@ -50,8 +49,8 @@ export const OffsetPagination = injectIntl(({ intl, total, offset, limit, onChan
         </li>
         {pages.map((_, idx) => (
           <li key={idx}>
-            <Button size='xs' variant='inverse' onClick={() => onChange((_ - 1) * limit)} className={clsx(idx * limit === offset ? 'text-blue-600 border-blue-300 bg-blue-100 hover:bg-blue-100 hover:text-blue-700 dark:bg-gray-700 dark:border-gray-700 dark:text-white' : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700')}>
-              {_}
+            <Button size='xs' variant='inverse' onClick={() => onChange((idx - 1) * limit)} className={clsx(idx * limit === offset ? 'text-blue-600 border-blue-300 bg-blue-100 hover:bg-blue-100 hover:text-blue-700 dark:bg-gray-700 dark:border-gray-700 dark:text-white' : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700')}>
+              {idx}
             </Button>
           </li>
         ))}

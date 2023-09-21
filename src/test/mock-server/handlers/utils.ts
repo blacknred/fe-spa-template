@@ -1,11 +1,12 @@
 import { IS_TEST } from '@/config';
-import { Role, User } from '@/features/users';
+import { Role } from '@/features/users';
 import {
   BaseEntity,
   Order,
   PaginatedRequestDto,
   PaginatedResponseDto,
 } from '@/types';
+import { QueryOptions } from '@mswjs/data/lib/query/queryTypes';
 import {
   DefaultBodyType,
   RestContext,
@@ -15,7 +16,7 @@ import {
 } from 'msw';
 import { FieldError } from 'react-hook-form';
 import { ZodError, ZodType, ZodTypeDef } from 'zod';
-import { default as users } from '../data/user.json';
+import { db } from '../db';
 
 export const TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9';
 
@@ -42,17 +43,21 @@ export class HttpError {
   }
 }
 
-export function exclude<T extends BaseEntity = BaseEntity>(
-  entity: T,
-  excluded: (keyof T)[],
-) {
+export function pick<
+  T extends BaseEntity = BaseEntity,
+  E extends keyof T = keyof T,
+>(entity: T, included: E[]) {
+  return JSON.parse(JSON.stringify(entity, included as string[])) as Pick<T, E>;
+}
+
+export function omit<
+  T extends BaseEntity = BaseEntity,
+  E extends keyof T = keyof T,
+>(entity: T, excluded: E[]) {
   const included = Object.keys(entity).filter(
-    (field) => !excluded.includes(field as keyof T),
+    (field) => !excluded.includes(field as E),
   );
-  return JSON.parse(JSON.stringify(entity, included)) as Omit<
-    T,
-    (typeof excluded)[number]
-  >;
+  return pick(entity, included as E[]);
 }
 
 export function checkAuth(request: RestRequest, roles?: Role[]) {
@@ -60,8 +65,9 @@ export function checkAuth(request: RestRequest, roles?: Role[]) {
 
   if (!token) throw new HttpError(401);
 
-  const id = +token.split('_')[1];
-  const user = users.find((user) => user.id === id) as User | null;
+  const user = db.user.findFirst({
+    where: { id: { equals: +token.split('_')[1] } },
+  });
 
   if (!user) throw new HttpError(401);
 
@@ -103,6 +109,31 @@ export function validate<
 
     throw new HttpError(400, errors);
   }
+}
+
+export function buildPaginatedQuery(
+  dto: Omit<PaginatedRequestDto, 'limit' | 'offset'>,
+) {
+  const { text, 'sort.order': order, 'sort.field': field, ...rest } = dto;
+
+  return {
+    where: {
+      ...(text && {
+        name: {
+          contains: text,
+        },
+      }),
+      ...Object.keys(rest).map((key) => ({
+        [key]: {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          equals: rest[key as keyof typeof rest],
+        },
+      })),
+    },
+    orderBy: {
+      [field]: order,
+    },
+  } as QueryOptions;
 }
 
 export function findAndCount<T extends BaseEntity = BaseEntity>(

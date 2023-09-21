@@ -1,6 +1,5 @@
 import { API_URL } from '@/config';
 import {
-  Category,
   CreateCategoryDto,
   GetCategoriesDto,
   UpdateCategoryDto,
@@ -11,12 +10,11 @@ import {
 import { Role } from '@/features/users';
 import { defaultSearchParams } from '@/utils';
 import { rest } from 'msw';
-import { default as categories } from '../data/category.json';
-import { default as products } from '../data/product.json';
+import { db } from '../db';
 import {
   HttpError,
+  buildPaginatedQuery,
   checkAuth,
-  findAndCount,
   formatError,
   res,
   validate,
@@ -30,18 +28,20 @@ export const categoriesHandlers = [
         createCategoryDto,
         await req.json(),
       );
-      const category = categories.find(({ name }) => name == dto.name);
+
+      const category = db.category.findFirst({
+        where: { name: { equals: dto.name } },
+      });
+
       if (category) {
         throw new HttpError(409, formatError('name', 'Name already in use'));
       }
-      const now = new Date().toISOString();
-      const result = {
+
+      const result = db.category.create({
         ...dto,
-        id: categories.length + 1,
+        id: db.category.count() + 1,
         authorId: user.id,
-        createdAt: now,
-        updatedAt: now,
-      };
+      });
 
       return res(ctx.status(201), ctx.json(result));
     } catch (e: unknown) {
@@ -53,13 +53,19 @@ export const categoriesHandlers = [
   rest.get(`${API_URL}/categories`, (req, _, ctx) => {
     try {
       const params = Object.fromEntries([...req.url.searchParams]);
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      const dto = validate<GetCategoriesDto>(
+      const { limit, offset, ...dto } = validate<GetCategoriesDto>(
         getCategoriesDto,
         params,
         defaultSearchParams,
       );
-      const result = findAndCount<Category>(categories, dto);
+
+      const query = buildPaginatedQuery(dto);
+      const dataset = db.category.findMany(query);
+      const result = {
+        hasMore: dataset.length > +offset + +limit,
+        items: dataset.slice(+offset, +offset + +limit),
+        total: dataset.length,
+      };
 
       return res(ctx.status(200), ctx.json(result));
     } catch (e: unknown) {
@@ -70,9 +76,11 @@ export const categoriesHandlers = [
 
   rest.get(`${API_URL}/categories/:id`, (req, _, ctx) => {
     try {
-      const result = categories.find(({ id }) => id === +req.params.id);
-      if (!result) throw new HttpError(404, 'Category not found');
+      const result = db.category.findFirst({
+        where: { id: { equals: +req.params.id } },
+      });
 
+      if (!result) throw new HttpError(404, 'Category not found');
       return res(ctx.status(200), ctx.json(result));
     } catch (e: unknown) {
       const err = e instanceof HttpError ? e : new HttpError();
@@ -87,10 +95,17 @@ export const categoriesHandlers = [
         updateCategoryDto,
         await req.json(),
       );
-      const category = categories.find(({ id }) => id === +req.params.id);
+
+      const category = db.category.findFirst({
+        where: { id: { equals: +req.params.id } },
+      });
+
       if (!category) throw new HttpError(404, 'Category not found');
-      const updatedAt = new Date().toISOString();
-      const result = { ...category, ...dto, updatedAt };
+
+      const result = db.category.update({
+        where: { id: { equals: category.id } },
+        data: { ...dto, updatedAt: new Date().toISOString() },
+      });
 
       return res(ctx.status(200), ctx.json(result));
     } catch (e: unknown) {
@@ -102,12 +117,24 @@ export const categoriesHandlers = [
   rest.delete(`${API_URL}/categories/:id`, (req, _, ctx) => {
     try {
       checkAuth(req, [Role.admin]);
-      const category = categories.find(({ id }) => id === +req.params.id);
+
+      const category = db.category.findFirst({
+        where: { id: { equals: +req.params.id } },
+      });
+
       if (!category) throw new HttpError(404, 'Category not found');
-      const product = products.find((p) => p.category_id === category.id);
+
+      const product = db.product.findFirst({
+        where: { categoryId: { equals: category.id } },
+      });
+
       if (product) {
         throw new HttpError(409, 'Category in use');
       }
+
+      db.category.delete({
+        where: { id: { equals: +req.params.id } },
+      });
 
       return res(ctx.status(200));
     } catch (e: unknown) {

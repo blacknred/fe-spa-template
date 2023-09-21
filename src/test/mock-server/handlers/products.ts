@@ -11,14 +11,13 @@ import {
 import { Role } from '@/features/users';
 import { defaultSearchParams } from '@/utils';
 import { rest } from 'msw';
-import { default as categories } from '../data/category.json';
-import { default as products } from '../data/product.json';
-import { default as users } from '../data/user.json';
+import { db } from '../db';
 import {
   HttpError,
+  buildPaginatedQuery,
   checkAuth,
-  findAndCount,
   formatError,
+  pick,
   res,
   validate,
 } from './utils';
@@ -31,22 +30,29 @@ export const productsHandlers = [
         createProductDto,
         await req.json(),
       );
-      const category = categories.find(({ id }) => id === dto.categoryId);
+
+      const category = db.category.findFirst({
+        where: { id: { equals: dto.categoryId } },
+      });
+
       if (!category) {
         throw new HttpError(
           409,
           formatError('categoryId', 'Category not exists'),
         );
       }
-      const now = new Date().toISOString();
-      const result = {
+
+      const product = db.product.create({
         ...dto,
-        id: products.length + 1,
+        id: db.product.count() + 1,
+        authorId: user.id,
+        categoryId: category.id,
+      });
+
+      const result = {
+        ...product,
         author: user,
         category: category,
-        barcode: +now,
-        createdAt: now,
-        updatedAt: now,
       } as Product;
 
       return res(ctx.status(201), ctx.json(result));
@@ -59,19 +65,32 @@ export const productsHandlers = [
   rest.get(`${API_URL}/products`, (req, _, ctx) => {
     try {
       const params = Object.fromEntries([...req.url.searchParams]);
-      const dto = validate<GetProductsDto>(
+      const { limit, offset, ...dto } = validate<GetProductsDto>(
         getProductsDto,
         params,
         defaultSearchParams,
       );
-      const result = findAndCount<(typeof products)[number]>(products, dto);
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      result.items = result.items.map(({ author_id, category_id, ...rest }) => {
-        const category = categories.find(({ id }) => id === category_id)!;
-        const author = users.find(({ id }) => id === author_id)!;
-        return { ...rest, author, category };
-      });
+
+      const query = buildPaginatedQuery(dto);
+      const dataset = db.product.findMany(query);
+
+      const result = {
+        hasMore: dataset.length > +offset + +limit,
+        total: dataset.length,
+        items: dataset
+          .slice(+offset, +offset + +limit)
+          .map(({ authorId, categoryId, ...rest }) => {
+            const category = db.category.findFirst({
+              where: { id: { equals: +categoryId } },
+            });
+
+            const author = db.user.findFirst({
+              where: { id: { equals: +authorId } },
+            })!;
+
+            return { ...rest, category, author: pick(author, ['id', 'name']) };
+          }),
+      };
 
       return res(ctx.status(200), ctx.json(result));
     } catch (e: unknown) {
@@ -82,12 +101,27 @@ export const productsHandlers = [
 
   rest.get(`${API_URL}/products/:id`, (req, _, ctx) => {
     try {
-      const product = products.find(({ id }) => id === +req.params.id);
+      const product = db.product.findFirst({
+        where: { id: { equals: +req.params.id } },
+      });
+
       if (!product) throw new HttpError(404, 'Product not found');
-      const { category_id, author_id, ...rest } = product;
-      const category = categories.find(({ id }) => id === category_id);
-      const author = users.find(({ id }) => id === author_id);
-      const result = { ...rest, category, author } as Product;
+
+      const { categoryId, authorId, ...rest } = product;
+
+      const category = db.category.findFirst({
+        where: { id: { equals: +categoryId } },
+      });
+
+      const author = db.user.findFirst({
+        where: { id: { equals: +authorId } },
+      })!;
+
+      const result = {
+        ...rest,
+        category,
+        author: pick(author, ['id', 'name']),
+      };
 
       return res(ctx.status(200), ctx.json(result));
     } catch (e: unknown) {
@@ -103,15 +137,21 @@ export const productsHandlers = [
         updateProductDto,
         await req.json(),
       );
-      const product = products.find(({ id }) => id === +req.params.id);
+
+      const product = db.product.findFirst({
+        where: { id: { equals: +req.params.id } },
+      });
+
       if (!product) throw new HttpError(404, 'Product not found');
-      const { category_id, author_id, ...rest } = product;
-      if (user.role !== Role.admin && author_id !== user.id) {
+
+      if (user.role !== Role.admin && product.authorId !== user.id) {
         throw new HttpError(403, 'Not allowed');
       }
-      const category = categories.find(
-        ({ id }) => id === dto.categoryId || category_id,
-      );
+
+      const category = db.category.findFirst({
+        where: { id: { equals: dto.categoryId || +product.categoryId } },
+      });
+
       if (!category) {
         throw new HttpError(
           409,
@@ -119,9 +159,20 @@ export const productsHandlers = [
         );
       }
 
-      const updatedAt = new Date().toISOString();
-      const author = users.find(({ id }) => id === author_id);
-      const result = { ...rest, category, author, updatedAt } as Product;
+      const author = db.user.findFirst({
+        where: { id: { equals: +product.authorId } },
+      })!;
+
+      const newProduct = db.product.update({
+        where: { id: { equals: category.id } },
+        data: { ...dto, updatedAt: new Date().toISOString() },
+      });
+
+      const result = {
+        ...newProduct,
+        category,
+        author: pick(author, ['id', 'name']),
+      };
 
       return res(ctx.status(200), ctx.json(result));
     } catch (e: unknown) {
@@ -133,11 +184,20 @@ export const productsHandlers = [
   rest.delete(`${API_URL}/products/:id`, (req, _, ctx) => {
     try {
       const user = checkAuth(req, [Role.admin, Role.manager]);
-      const product = products.find(({ id }) => id === +req.params.id);
+
+      const product = db.product.findFirst({
+        where: { id: { equals: +req.params.id } },
+      });
+
       if (!product) throw new HttpError(404, 'Product not found');
-      if (user.role !== Role.admin && product.author_id !== user.id) {
+
+      if (user.role !== Role.admin && product.authorId !== user.id) {
         throw new HttpError(403, 'Not allowed');
       }
+
+      db.product.delete({
+        where: { id: { equals: +req.params.id } },
+      });
 
       return res(ctx.status(200));
     } catch (e: unknown) {

@@ -1,57 +1,47 @@
-import { useDisclosure } from '@/hooks/useDisclosure';
-import { rtlRender, screen, userEvent, waitFor } from '@/mocks/test-utils';
-
+import { rtlRender, screen, userEvent, waitFor } from '@/test/utils';
+import { useState } from 'react';
 import { Button } from '../../Button';
 import { Drawer } from '../Drawer';
 
-const openButtonText = 'Open Drawer';
+const openText = 'Open Drawer';
+const submitText = 'Submit Drawer';
 const titleText = 'Drawer Title';
-const cancelButtonText = 'Cancel';
-const drawerContentText = 'Hello From Drawer';
+const cancelText = 'Cancel';
+const contentText = 'Hello From Drawer';
 
 const TestDrawer = () => {
-  const { close, open, isOpen } = useDisclosure();
+  const [isDone, setIsDone] = useState(false);
 
   return (
-    <>
-      <Button onClick={open}>{openButtonText}</Button>
-      <Drawer
-        isOpen={isOpen}
-        onClose={close}
-        title={titleText}
-        size="md"
-        renderFooter={() => (
-          <>
-            <Button variant="inverse" size="sm" onClick={close}>
-              {cancelButtonText}
-            </Button>
-          </>
-        )}
-      >
-        {drawerContentText}
-      </Drawer>
-    </>
+    <Drawer
+      isDone={isDone}
+      title={titleText}
+      cancelButtonText={cancelText}
+      triggerButton={<Button size="sm">{openText}</Button>}
+      submitButton={<Button size="sm" onClick={() => setIsDone(prev => !prev)}>{submitText}</Button>}
+    >
+      {contentText}
+    </Drawer>
   );
 };
 
-test('should handle basic drawer flow', async () => {
-  await rtlRender(<TestDrawer />);
+describe('Drawer element', () => {
+  test('should open, close on user actions', async () => {
+    rtlRender(<TestDrawer />);
+    expect(screen.queryByText(titleText)).not.toBeDefined();
 
-  expect(screen.queryByText(titleText)).not.toBeInTheDocument();
+    // open
+    void userEvent.click(screen.getByRole('button', { name: openText }));
+    expect(screen.getByText(titleText)).toBeDefined();
 
-  userEvent.click(
-    screen.getByRole('button', {
-      name: openButtonText,
-    })
-  );
+    // close directly
+    void userEvent.click(screen.getByRole('button', { name: cancelText }));
+    await waitFor(() => expect(screen.queryByText(titleText)).not.toBeDefined());
 
-  expect(screen.getByText(titleText)).toBeInTheDocument();
-
-  userEvent.click(
-    screen.getByRole('button', {
-      name: cancelButtonText,
-    })
-  );
-
-  await waitFor(() => expect(screen.queryByText(titleText)).not.toBeInTheDocument());
-});
+    // close indirectly
+    void userEvent.click(screen.getByRole('button', { name: openText }));
+    expect(screen.getByText(titleText)).toBeDefined();
+    void userEvent.click(screen.getByRole('button', { name: submitText }));
+    await waitFor(() => expect(screen.queryByText(titleText)).not.toBeDefined());
+  });
+})

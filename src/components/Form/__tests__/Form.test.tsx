@@ -1,78 +1,64 @@
-import * as z from 'zod';
-
 import { Button } from '@/components/Elements/Button';
-import { rtlRender, screen, waitFor, userEvent } from '@/mocks/test-utils';
-
+import { rtlRender, screen, userEvent, waitFor } from '@/test/utils';
+import * as z from 'zod';
 import { Form } from '../Form';
 import { InputField } from '../InputField';
 
-const testData = {
-  title: 'Hello World',
-};
+describe('Form element', () => {
+  const testData = { title: 'Hello World' };
+  const schema = z.object({
+    title: z.string().min(1, 'Required'),
+  });
 
-const schema = z.object({
-  title: z.string().min(1, 'Required'),
-});
+  test('should render and submit a basic Form component', async () => {
+    const handleSubmit = vitest.fn();
 
-test('should render and submit a basic Form component', async () => {
-  const handleSubmit = jest.fn();
+    rtlRender(
+      <Form<typeof testData, typeof schema> onSubmit={handleSubmit} schema={schema} id="my-form">
+        {({ register, formState }) => (
+          <>
+            <InputField
+              label="Title"
+              error={formState.errors['title']}
+              registration={register('title')}
+            />
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  rtlRender(
-    <Form<typeof testData, typeof schema> onSubmit={handleSubmit} schema={schema} id="my-form">
-      {({ register, formState }) => (
-        <>
-          <InputField
-            label="Title"
-            error={formState.errors['title']}
-            registration={register('title')}
-          />
+            <Button name="submit" type="submit" className="w-full">
+              Submit
+            </Button>
+          </>
+        )}
+      </Form>
+    );
 
-          <Button name="submit" type="submit" className="w-full">
-            Submit
-          </Button>
-        </>
-      )}
-    </Form>
-  );
+    void userEvent.type(screen.getByLabelText(/title/i), testData.title);
+    void userEvent.click(screen.getByRole('button', { name: /submit/i }));
+    await waitFor(() => expect(handleSubmit).toHaveBeenCalledWith(testData, expect.anything()));
+  });
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-  userEvent.type(screen.getByLabelText(/title/i), testData.title);
+  test('should fail submission if validation fails', async () => {
+    const handleSubmit = vitest.fn();
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-  userEvent.click(screen.getByRole('button', { name: /submit/i }));
+    rtlRender(
+      <Form<typeof testData, typeof schema> onSubmit={handleSubmit} schema={schema} id="my-form">
+        {({ register, formState }) => (
+          <>
+            <InputField
+              label="Title"
+              error={formState.errors['title']}
+              registration={register('title')}
+            />
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  await waitFor(() => expect(handleSubmit).toHaveBeenCalledWith(testData, expect.anything()));
-});
+            <Button name="submit" type="submit" className="w-full">
+              Submit
+            </Button>
+          </>
+        )}
+      </Form>
+    );
 
-test('should fail submission if validation fails', async () => {
-  const handleSubmit = jest.fn();
-
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  rtlRender(
-    <Form<typeof testData, typeof schema> onSubmit={handleSubmit} schema={schema} id="my-form">
-      {({ register, formState }) => (
-        <>
-          <InputField
-            label="Title"
-            error={formState.errors['title']}
-            registration={register('title')}
-          />
-
-          <Button name="submit" type="submit" className="w-full">
-            Submit
-          </Button>
-        </>
-      )}
-    </Form>
-  );
-
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-  userEvent.click(screen.getByRole('button', { name: /submit/i }));
-
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-  await screen.findByRole(/alert/i, { name: /required/i });
-
-  expect(handleSubmit).toHaveBeenCalledTimes(0);
-});
+    void userEvent.click(screen.getByRole('button', { name: /submit/i }));
+    await screen.findByRole('alert', { name: /required/i });
+    expect(handleSubmit).toHaveBeenCalledTimes(0);
+  });
+})

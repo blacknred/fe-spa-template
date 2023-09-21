@@ -18,7 +18,8 @@ const sizes = {
 type Props = {
   isDone: boolean;
   triggerButton: ReactElement;
-  submitButton: ReactElement;
+  submitButton?: ReactElement;
+  cancelButtonText?: string;
   title: string;
   children: ReactNode;
   size?: keyof typeof sizes;
@@ -28,6 +29,7 @@ export const Drawer = injectIntl(({
   title,
   children,
   isDone,
+  cancelButtonText,
   triggerButton,
   submitButton,
   size = 'md',
@@ -52,7 +54,7 @@ export const Drawer = injectIntl(({
         >
           <div className="absolute inset-0 overflow-hidden">
             <Dialog.Overlay className="absolute inset-0" />
-            <div className="fixed inset-y-0 right-0 pl-10 max-w-full flex">
+            <div className="fixed inset-y-0 right-0 sm:pl-10 max-w-full flex">
               <Transition.Child
                 as={Fragment}
                 enter="transform transition ease-in-out duration-300 sm:duration-300"
@@ -85,12 +87,14 @@ export const Drawer = injectIntl(({
                       </div>
                       <div className="mt-6 relative flex-1 px-4 sm:px-6">{children}</div>
                     </div>
-                    <div className="flex-shrink-0 px-4 py-4 flex justify-end space-x-2">
-                      <Button variant="inverse" size="sm" onClick={() => close()}>
-                        {intl.formatMessage({ id: 'ui.cancel' })}
-                      </Button>
-                      {submitButton}
-                    </div>
+                    {submitButton && (
+                      <div className="flex-shrink-0 px-4 py-4 flex justify-end space-x-2">
+                        <Button variant="inverse" size="sm" onClick={() => close()}>
+                          {cancelButtonText || intl.formatMessage({ id: 'ui.cancel' })}
+                        </Button>
+                        {submitButton}
+                      </div>
+                    )}
                   </div>
                 </div>
               </Transition.Child>

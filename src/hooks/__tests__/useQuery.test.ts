@@ -52,7 +52,7 @@ describe('useQuery hook', () => {
     expect(fetchSpy).toHaveBeenCalledTimes(2);
   });
 
-  test('should return error', async () => {
+  test('should return an error', async () => {
     const error = 'Not allowed';
     fetchSpy.mockRejectedValue({
       ok: false,
