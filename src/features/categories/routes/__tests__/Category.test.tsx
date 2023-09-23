@@ -30,7 +30,7 @@ describe("Category", () => {
 
     // render
     await screen.findByText(category.name);
-    expect(screen.getByText(category.name)).toBeDefined();
+    expect(screen.getByText(category.name)).toBeInTheDocument();
 
     // update
     const updateText = '-Updated';
@@ -46,10 +46,10 @@ describe("Category", () => {
     const submitButton = within(drawer).getByRole('button', { name: /submit/i });
     void userEvent.click(submitButton);
 
-    await waitFor(() => expect(drawer).not.toBeDefined());
+    await waitFor(() => expect(drawer).not.toBeInTheDocument());
 
     await screen.findByText(category.name);
-    expect(screen.getByText(`${category.name}${updateText}`)).toBeDefined();
-    expect(screen.getByText(`${category.image}${updateText}`)).toBeDefined();
+    expect(screen.getByText(`${category.name}${updateText}`)).toBeInTheDocument();
+    expect(screen.getByText(`${category.image}${updateText}`)).toBeInTheDocument();
   });
 })

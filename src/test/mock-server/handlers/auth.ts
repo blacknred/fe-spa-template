@@ -1,6 +1,5 @@
 import { API_URL } from '@/config';
 import { CreateAuthDto, createAuthDto } from '@/features/auth';
-import { Role } from '@/features/users';
 import { rest } from 'msw';
 import { db } from '../db';
 import {
@@ -23,10 +22,6 @@ export const authHandlers = [
 
       if (!user) {
         throw new HttpError(409, formatError('email', 'Email not in use'));
-      }
-
-      if (![Role.admin, Role.manager].includes(user.role as Role)) {
-        throw new HttpError(403, formatError('email', 'No access'));
       }
 
       if (dto.password !== user.password) {

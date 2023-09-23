@@ -3,9 +3,9 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import { server } from '@/test/mock-server/server';
+import { resetDb } from '@/test/mock-server/db';
 import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect';
-import { resetDb } from './test/mock-server/db';
 
 vi.mock('zustand'); // auto-mocking
 

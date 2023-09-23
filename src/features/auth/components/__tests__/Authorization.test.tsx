@@ -12,7 +12,7 @@ describe('The Contact component', () => {
       user,
     });
 
-    expect(screen.getByText(protectedResource)).toBeDefined();
+    expect(screen.getByText(protectedResource)).toBeInTheDocument();
   });
 
   test('should not view protected resource if user role does not match', async () => {
@@ -24,15 +24,15 @@ describe('The Contact component', () => {
       { user }
     );
 
-    expect(screen.queryByText(protectedResource)).not.toBeDefined();
-    expect(screen.getByText(forbiddenMessage)).toBeDefined();
+    expect(screen.queryByText(protectedResource)).not.toBeInTheDocument();
+    expect(screen.getByText(forbiddenMessage)).toBeInTheDocument();
   });
 
   test('should view protected resource if policy check passes', async () => {
     const user = createUser();
     await render(<Authorization check={() => true}>{protectedResource}</Authorization>, { user });
 
-    expect(screen.getByText(protectedResource)).toBeDefined();
+    expect(screen.getByText(protectedResource)).toBeInTheDocument();
   });
 
   test('should not view protected resource if policy check fails and show fallback message instead', async () => {
@@ -44,7 +44,7 @@ describe('The Contact component', () => {
       { user }
     );
 
-    expect(screen.queryByText(protectedResource)).not.toBeDefined();
-    expect(screen.getByText(forbiddenMessage)).toBeDefined();
+    expect(screen.queryByText(protectedResource)).not.toBeInTheDocument();
+    expect(screen.getByText(forbiddenMessage)).toBeInTheDocument();
   });
 })

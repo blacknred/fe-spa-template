@@ -21,7 +21,7 @@ describe('Products', () => {
 
     // render empty
     await render(<Products />, { user });
-    expect(await screen.findByText(/no entries/i)).toBeDefined();
+    expect(await screen.findByText(/no entries/i)).toBeInTheDocument();
 
     // create
     void userEvent.click(screen.getByRole('button', { name: /create product/i }));
@@ -42,13 +42,13 @@ describe('Products', () => {
 
     const submitButton = within(drawer).getByRole('button', { name: /submit/i });
     void userEvent.click(submitButton);
-    await waitFor(() => expect(drawer).not.toBeDefined());
+    await waitFor(() => expect(drawer).not.toBeInTheDocument());
 
     const row = screen.getByRole('row', {
       name: `${product.name} ${formatDate(category.createdAt)}`,
     });
 
-    expect(within(row).getByRole('cell', { name: product.name })).toBeDefined();
+    expect(within(row).getByRole('cell', { name: product.name })).toBeInTheDocument();
 
     // delete
     void userEvent.click(await within(row).findByTestId('delete-product'));
@@ -60,7 +60,7 @@ describe('Products', () => {
     void userEvent.click(confirmationDeleteButton);
     await screen.findByText(/product deleted/i);
 
-    expect(within(row).queryByRole('cell', { name: product.name })).not.toBeDefined();
+    expect(within(row).queryByRole('cell', { name: product.name })).not.toBeInTheDocument();
   });
 })
 

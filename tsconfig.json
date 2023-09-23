@@ -26,6 +26,6 @@
       "@/*": ["src/*"]
     },
   },
-  "include": ["src", "vite-env.d.ts", "src/setupTest.ts", "src/__mocks__"],
+  "include": ["src", "vite-env.d.ts", "src/setupTests.ts", "src/__mocks__"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

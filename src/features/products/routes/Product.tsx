@@ -2,13 +2,15 @@ import { Avatar, Entry, Spinner } from '@/components/Elements';
 import { PageLayout } from '@/components/Layout';
 import { format, parseISO } from 'date-fns';
 import { injectIntl } from 'react-intl';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useProduct } from '..';
 import { UpdateProduct } from '../components/UpdateProduct';
 import { NotFound } from '@/features/misc';
+import { DeleteProduct } from '../components/DeleteProduct';
 
 export const Product = injectIntl(({ intl }) => {
   const { id = '' } = useParams();
+  const navigate = useNavigate();
   const { isLoading, data, refetch } = useProduct(+id);
 
   if (isLoading) {
@@ -25,10 +27,12 @@ export const Product = injectIntl(({ intl }) => {
     <PageLayout title={intl.formatMessage({ id: 'title.product' }) + ` #${id}`}>
       <div className="bg-white dark:bg-gray-600 shadow overflow-hidden sm:rounded-lg">
         <div className="px-4 py-5 sm:px-6 flex justify-between align-middle">
-          <p className="mt-1 max-w-2xl text-sm">
+          <p className="mt-1 text-sm flex-1">
             {intl.formatMessage({ id: 'title.product.details' })}
           </p>
+
           <UpdateProduct product={data} onSuccess={refetch} />
+          <DeleteProduct product={data} onSuccess={() => navigate('..')} />
         </div>
         <div className="border-t border-gray-200 dark:border-gray-500 px-4 py-5 sm:p-0">
           <dl className="sm:divide-y sm:divide-gray-200 dark:sm:divide-gray-500">

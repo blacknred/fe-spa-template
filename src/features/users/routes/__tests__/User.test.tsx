@@ -25,6 +25,6 @@ describe("User", () => {
 
     // render
     await screen.findByText(user.name);
-    expect(screen.getByText(user.name)).toBeDefined();
+    expect(screen.getByText(user.name)).toBeInTheDocument();
   });
 })

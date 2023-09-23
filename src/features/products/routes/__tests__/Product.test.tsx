@@ -32,7 +32,7 @@ describe("Product", () => {
 
     // render
     await screen.findByText(product.name);
-    expect(screen.getByText(product.name)).toBeDefined();
+    expect(screen.getByText(product.name)).toBeInTheDocument();
 
     // update
     const updateText = '-Updated';
@@ -57,13 +57,13 @@ describe("Product", () => {
     const submitButton = within(drawer).getByRole('button', { name: /submit/i });
     void userEvent.click(submitButton);
 
-    await waitFor(() => expect(drawer).not.toBeDefined());
+    await waitFor(() => expect(drawer).not.toBeInTheDocument());
 
     await screen.findByText(product.name);
-    expect(screen.getByText(`${product.name}${updateText}`)).toBeDefined();
-    expect(screen.getByText(`${product.description}${updateText}`)).toBeDefined();
-    expect(screen.getByText(`${product.preview}${updateText}`)).toBeDefined();
-    expect(screen.getByText(`${product.price}${updateNumber}`)).toBeDefined();
-    expect(screen.getByText(`${product.quantity}${updateNumber}`)).toBeDefined();
+    expect(screen.getByText(`${product.name}${updateText}`)).toBeInTheDocument();
+    expect(screen.getByText(`${product.description}${updateText}`)).toBeInTheDocument();
+    expect(screen.getByText(`${product.preview}${updateText}`)).toBeInTheDocument();
+    expect(screen.getByText(`${product.price}${updateNumber}`)).toBeInTheDocument();
+    expect(screen.getByText(`${product.quantity}${updateNumber}`)).toBeInTheDocument();
   });
 })

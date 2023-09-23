@@ -8,7 +8,7 @@ import { useDeleteCategory } from '../api';
 import { Category } from '..';
 
 type Props = WrappedComponentProps & {
-  onSuccess: () => Promise<void>;
+  onSuccess: () => unknown;
   category: Category;
 };
 
@@ -33,7 +33,7 @@ export const DeleteCategory = injectIntl(({ onSuccess, category, intl }: Props) 
         }
         cancelButtonText={intl.formatMessage({ id: 'ui.cancel' })}
         triggerButton={
-          <Button variant="danger" icon={<TrashIcon className="h-4 w-4" data-testid="delete-category" />} />
+          <Button variant="danger" icon={<TrashIcon className="h-4 w-4" />}  data-testid="delete-category"/>
         }
         confirmButton={
           <Button isLoading={isPending} type="button" variant='danger' onClick={() => void mutate()}>

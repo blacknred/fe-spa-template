@@ -6,7 +6,7 @@ import { WrappedComponentProps, injectIntl } from 'react-intl';
 import { Product, useDeleteProduct } from '..';
 
 type Props = WrappedComponentProps & {
-  onSuccess: () => Promise<void>;
+  onSuccess: () => unknown;
   product: Product;
 };
 
@@ -31,10 +31,10 @@ export const DeleteProduct = injectIntl(({ onSuccess, product, intl }: Props) =>
         }
         cancelButtonText={intl.formatMessage({ id: 'ui.cancel' })}
         triggerButton={
-          <Button variant="danger" size="sm" icon={<TrashIcon className="h-4 w-4" data-testid="delete-product" />} />
+          <Button variant="danger" size="sm" icon={<TrashIcon className="h-4 w-4" />} data-testid="delete-product" />
         }
         confirmButton={
-          <Button isLoading={isPending} type="button"  variant='danger' onClick={() => void mutate()}>
+          <Button isLoading={isPending} type="button" variant='danger' onClick={() => void mutate()}>
             {label}
           </Button>
         }

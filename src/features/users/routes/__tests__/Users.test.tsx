@@ -23,6 +23,6 @@ describe('Users', () => {
       name: `${user.name} ${formatDate(user.createdAt)}`,
     });
 
-    expect(within(row).getByRole('cell', { name: user.name })).toBeDefined();
+    expect(within(row).getByRole('cell', { name: user.name })).toBeInTheDocument();
   });
 })
