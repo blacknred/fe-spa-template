@@ -19,10 +19,11 @@ export const useAuth = create<AuthStore>()((set, get) => ({
   profile: null,
   setProfile: (profile: User) => set({ profile }),
   checkRole: (roles) => {
-    const role = get().profile?.role;
+    const profile = get().profile;
+    if (!profile) return false;
     if (!roles.length) return true;
-    if (!role) return false;
-    return roles.includes(role);
+    if (!profile.role) return false;
+    return roles.includes(profile.role);
   },
   startSession: () => getAuth()
     .then((res) => {

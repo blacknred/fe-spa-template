@@ -1,5 +1,5 @@
 
-import { createUser, render, screen, within } from '@/test/utils';
+import { createUser, render, screen, within } from 'test/utils';
 import { formatDate } from '@/utils';
 import { Mock } from 'vitest';
 import { Users } from '../Users';

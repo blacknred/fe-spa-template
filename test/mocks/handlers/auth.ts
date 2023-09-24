@@ -9,10 +9,12 @@ import {
   formatError,
   res,
   validate,
-} from './utils';
+} from '../utils';
+
+const BASE_URL = `${API_URL}/auth`;
 
 export const authHandlers = [
-  rest.post(`${API_URL}/auth`, async (req, _, ctx) => {
+  rest.post(BASE_URL, async (req, _, ctx) => {
     try {
       const dto = validate<CreateAuthDto>(createAuthDto, await req.json());
 
@@ -46,7 +48,7 @@ export const authHandlers = [
     }
   }),
 
-  rest.get(`${API_URL}/auth`, (req, _, ctx) => {
+  rest.get(BASE_URL, (req, _, ctx) => {
     try {
       const result = checkAuth(req);
 
@@ -57,7 +59,7 @@ export const authHandlers = [
     }
   }),
 
-  rest.patch(`${API_URL}/auth`, (req, _, ctx) => {
+  rest.patch(BASE_URL, (req, _, ctx) => {
     try {
       // no Refresh token cookie usage due msw cookie issue
       const user = checkAuth(req);
@@ -74,7 +76,7 @@ export const authHandlers = [
     }
   }),
 
-  rest.delete(`${API_URL}/auth`, (req, _, ctx) => {
+  rest.delete(BASE_URL, (req, _, ctx) => {
     try {
       checkAuth(req);
 

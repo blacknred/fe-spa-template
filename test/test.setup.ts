@@ -2,10 +2,9 @@
 // allows you to do things like:
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
-import { server } from '@/test/mock-server/server';
-import { resetDb } from '@/test/mock-server/db';
+import { server } from './mocks/server';
+import { resetDb } from './mocks/db';
 import '@testing-library/jest-dom';
-import '@testing-library/jest-dom/extend-expect';
 
 vi.mock('zustand'); // auto-mocking
 

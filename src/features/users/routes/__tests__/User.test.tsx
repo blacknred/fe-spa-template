@@ -2,7 +2,7 @@ import {
   createUser,
   render,
   screen
-} from '@/test/utils';
+} from 'test/utils';
 import { useParams as useMockParams } from 'react-router-dom';
 import { Mock } from 'vitest';
 import { User } from '../User';

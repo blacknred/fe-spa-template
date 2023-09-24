@@ -20,10 +20,12 @@ import {
   pick,
   res,
   validate,
-} from './utils';
+} from '../utils';
+
+const BASE_URL = `${API_URL}/products`;
 
 export const productsHandlers = [
-  rest.post(`${API_URL}/products`, async (req, _, ctx) => {
+  rest.post(BASE_URL, async (req, _, ctx) => {
     try {
       const user = checkAuth(req, [Role.admin, Role.manager]);
       const dto = validate<CreateProductDto>(
@@ -62,7 +64,7 @@ export const productsHandlers = [
     }
   }),
 
-  rest.get(`${API_URL}/products`, (req, _, ctx) => {
+  rest.get(BASE_URL, (req, _, ctx) => {
     try {
       const params = Object.fromEntries([...req.url.searchParams]);
       const { limit, offset, ...dto } = validate<GetProductsDto>(
@@ -99,7 +101,7 @@ export const productsHandlers = [
     }
   }),
 
-  rest.get(`${API_URL}/products/:id`, (req, _, ctx) => {
+  rest.get(`${BASE_URL}/:id`, (req, _, ctx) => {
     try {
       const product = db.product.findFirst({
         where: { id: { equals: +req.params.id } },
@@ -130,7 +132,7 @@ export const productsHandlers = [
     }
   }),
 
-  rest.patch(`${API_URL}/products/:id`, async (req, _, ctx) => {
+  rest.patch(`${BASE_URL}/:id`, async (req, _, ctx) => {
     try {
       const user = checkAuth(req, [Role.admin, Role.manager]);
       const dto = validate<UpdateProductDto>(
@@ -181,7 +183,7 @@ export const productsHandlers = [
     }
   }),
 
-  rest.delete(`${API_URL}/products/:id`, (req, _, ctx) => {
+  rest.delete(`${BASE_URL}/:id`, (req, _, ctx) => {
     try {
       const user = checkAuth(req, [Role.admin, Role.manager]);
 

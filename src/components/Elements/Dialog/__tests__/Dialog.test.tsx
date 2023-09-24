@@ -1,4 +1,4 @@
-import { rtlRender, screen, userEvent, waitFor } from '@/test/utils';
+import { rtlRender, screen, userEvent, waitFor } from 'test/utils';
 import { useState } from 'react';
 import { Button } from '../../Button';
 import { Dialog } from '../Dialog';

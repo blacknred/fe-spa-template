@@ -4,4 +4,3 @@
 /// <reference types="vitest/globals" />
 
 import 'vite-plugin-pwa/client';
-declare module '*.module.css';

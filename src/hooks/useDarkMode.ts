@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 /**
  * useDarkMode api hook
@@ -14,16 +14,13 @@ export const useDarkMode = (el = document.documentElement) => {
     return false;
   });
 
-  const toggle = useCallback(
-    () =>
-      setIsDark((prev) => {
-        if (!prev) el.classList.add('dark');
-        else el.classList.remove('dark');
-        localStorage.darkTheme = !prev;
-        return !prev;
-      }),
-    [el],
-  );
+  useEffect(() => {
+    if (isDark) el.classList.add('dark');
+    else el.classList.remove('dark');
+    localStorage.darkTheme = isDark;
+  }, [isDark, el]);
+
+  const toggle = useCallback(() => setIsDark((prev) => !prev), []);
 
   return [isDark, toggle] as const;
 };

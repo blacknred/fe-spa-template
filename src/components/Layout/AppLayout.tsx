@@ -167,9 +167,6 @@ const MobileSidebar = injectIntl(({ sidebarOpen, setSidebarOpen, intl }: Wrapped
   </Transition.Root>
 ));
 
-
-
-
 const DarkModeSwitch = () => {
   const [isDarkMode, toggleDark] = useDarkMode(document.documentElement);
 

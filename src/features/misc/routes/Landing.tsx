@@ -14,7 +14,7 @@ export const Landing = injectIntl(({ intl }) => (
     </h2>
 
     <Link to={'/auth/login'} >
-      <Button className='animate-[highlighmt_8s_linear_infinite]'>
+      <Button className='animate-fadeIn'>
         {intl.formatMessage({ id: 'title.auth' })}
       </Button>
     </Link>

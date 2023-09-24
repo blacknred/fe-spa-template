@@ -1,5 +1,5 @@
 import { CreateUser } from '@/features/users';
-import { mockUser, render, screen, userEvent, waitFor } from '@/test/utils';
+import { mockUser, render, screen, userEvent, waitFor } from 'test/utils';
 
 describe('Register', () => {
   test('should register new user and call onSuccess', async () => {

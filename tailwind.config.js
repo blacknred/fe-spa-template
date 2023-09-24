@@ -15,42 +15,38 @@ export default {
       },
       fontFamily: {
         // sans: ['var(--font-inter)'],
-        // mono: ['var(--font-roboto-mono)'],
         body: ["Inter", "sans-serif"],
       },
       filter: ['hover', 'focus'],
-      keyframes: ({ theme }) => ({
+      keyframes: {
+        fadeIn: {
+          from: { opacity: '0' },
+          to: { opacity: '1' }
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' }
+        },
+        blink: {
+          '0%': { opacity: '0.2' },
+          '20%': { opacity: '1' },
+          '100% ': { opacity: '0.2' }
+        },
         spin: {
           from: {
-            transform: 'rotate(0deg)',
+            transform: "rotate(0deg)",
           },
           to: {
-            transform: 'rotate(360deg)',
+            transform: "rotate(360deg)",
           },
         },
-        highlight: {
-          '0%': {
-            background: theme('colors.vercel.pink'),
-            color: theme('colors.white'),
-          },
-          '40%': {
-            background: theme('colors.vercel.red'),
-            color: theme('colors.black'),
-          },
-        },
-        loading: {
-          '0%': {
-            opacity: '.2',
-          },
-          '20%': {
-            opacity: '1',
-            transform: 'translateX(1px)',
-          },
-          to: {
-            opacity: '.2',
-          },
-        },
-      }),
+      },
+      animation: {
+        fadeIn: 'fadeIn .3s ease-in-out',
+        carousel: 'marquee 60s linear infinite',
+        blink: 'blink 1.4s both infinite',
+        spin: 'spin 1s ease-in-out infinite'
+      }
     },
   },
 

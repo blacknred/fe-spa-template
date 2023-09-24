@@ -23,9 +23,10 @@
     /* Paths */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "test/*": ["test/*"]
     },
   },
-  "include": ["src", "vite-env.d.ts", "src/setupTests.ts", "src/__mocks__"],
+  "include": ["src", "vite-env.d.ts", "test/test.setup.ts", "src/__mocks__", "test"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -18,10 +18,12 @@ import {
   formatError,
   res,
   validate,
-} from './utils';
+} from '../utils';
+
+const BASE_URL = `${API_URL}/categories`;
 
 export const categoriesHandlers = [
-  rest.post(`${API_URL}/categories`, async (req, _, ctx) => {
+  rest.post(BASE_URL, async (req, _, ctx) => {
     try {
       const user = checkAuth(req, [Role.admin]);
       const dto = validate<CreateCategoryDto>(
@@ -50,7 +52,7 @@ export const categoriesHandlers = [
     }
   }),
 
-  rest.get(`${API_URL}/categories`, (req, _, ctx) => {
+  rest.get(BASE_URL, (req, _, ctx) => {
     try {
       const params = Object.fromEntries([...req.url.searchParams]);
       const { limit, offset, ...dto } = validate<GetCategoriesDto>(
@@ -74,7 +76,7 @@ export const categoriesHandlers = [
     }
   }),
 
-  rest.get(`${API_URL}/categories/:id`, (req, _, ctx) => {
+  rest.get(`${BASE_URL}/:id`, (req, _, ctx) => {
     try {
       const result = db.category.findFirst({
         where: { id: { equals: +req.params.id } },
@@ -88,7 +90,7 @@ export const categoriesHandlers = [
     }
   }),
 
-  rest.patch(`${API_URL}/categories/:id`, async (req, _, ctx) => {
+  rest.patch(`${BASE_URL}/:id`, async (req, _, ctx) => {
     try {
       checkAuth(req, [Role.admin]);
       const dto = validate<UpdateCategoryDto>(
@@ -114,7 +116,7 @@ export const categoriesHandlers = [
     }
   }),
 
-  rest.delete(`${API_URL}/categories/:id`, (req, _, ctx) => {
+  rest.delete(`${BASE_URL}/:id`, (req, _, ctx) => {
     try {
       checkAuth(req, [Role.admin]);
 

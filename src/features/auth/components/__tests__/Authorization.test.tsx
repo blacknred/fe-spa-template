@@ -1,5 +1,5 @@
 import { Role } from '@/features/users';
-import { createUser, render, screen } from '@/test/utils';
+import { createUser, render, screen } from 'test/utils';
 import { Authorization } from '../Authorization';
 
 describe('The Contact component', () => {

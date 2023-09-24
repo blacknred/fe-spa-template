@@ -8,7 +8,7 @@ import {
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ReactElement } from 'react';
-import { db } from './mock-server/db';
+import { db } from './mocks/db';
 
 export * from '@testing-library/react';
 export { rtlRender, userEvent };

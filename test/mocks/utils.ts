@@ -16,7 +16,7 @@ import {
 } from 'msw';
 import { FieldError } from 'react-hook-form';
 import { ZodError, ZodType, ZodTypeDef } from 'zod';
-import { db } from '../db';
+import { db } from './db';
 
 export const TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9';
 

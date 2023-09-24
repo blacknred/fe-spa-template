@@ -1,5 +1,5 @@
 
-import { createCategory, createUser, mockProduct, render, screen, userEvent, waitFor, within } from '@/test/utils';
+import { createCategory, createUser, mockProduct, render, screen, userEvent, waitFor, within } from 'test/utils';
 import { formatDate } from '@/utils';
 import { Mock } from 'vitest';
 import { Products } from '../Products';

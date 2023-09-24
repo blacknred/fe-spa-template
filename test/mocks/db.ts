@@ -84,4 +84,3 @@ function persister(_: unknown, model: KeyType) {
   });
 }
 
-initializeDb();

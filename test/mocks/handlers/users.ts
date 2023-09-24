@@ -19,10 +19,12 @@ import {
   omit,
   res,
   validate,
-} from './utils';
+} from '../utils';
+
+const BASE_URL = `${API_URL}/users`;
 
 export const usersHandlers = [
-  rest.post(`${API_URL}/users`, async (req, _, ctx) => {
+  rest.post(BASE_URL, async (req, _, ctx) => {
     try {
       const dto = validate<CreateUserDto>(createUserDto, await req.json());
 
@@ -46,7 +48,7 @@ export const usersHandlers = [
     }
   }),
 
-  rest.get(`${API_URL}/users`, (req, _, ctx) => {
+  rest.get(BASE_URL, (req, _, ctx) => {
     try {
       checkAuth(req, [Role.admin]);
       const params = Object.fromEntries([...req.url.searchParams]);
@@ -73,7 +75,7 @@ export const usersHandlers = [
     }
   }),
 
-  rest.get(`${API_URL}/users/:id`, (req, _, ctx) => {
+  rest.get(`${BASE_URL}/:id`, (req, _, ctx) => {
     try {
       checkAuth(req, [Role.admin]);
 
@@ -90,7 +92,7 @@ export const usersHandlers = [
     }
   }),
 
-  rest.patch(`${API_URL}/users`, async (req, _, ctx) => {
+  rest.patch(BASE_URL, async (req, _, ctx) => {
     try {
       const user = checkAuth(req);
       const dto = validate<UpdateUserDto>(updateUserDto, await req.json());
@@ -115,7 +117,7 @@ export const usersHandlers = [
     }
   }),
 
-  rest.delete(`${API_URL}/users`, (req, _, ctx) => {
+  rest.delete(BASE_URL, (req, _, ctx) => {
     try {
       const user = checkAuth(req);
 

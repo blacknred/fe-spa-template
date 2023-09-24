@@ -1,4 +1,4 @@
-import { createUser, render, screen, userEvent, waitFor } from '@/test/utils';
+import { createUser, render, screen, userEvent, waitFor } from 'test/utils';
 import { CreateAuth } from '../../components/CreateAuth';
 
 describe('Login', () => {

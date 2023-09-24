@@ -8,12 +8,13 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      'test': path.resolve(__dirname, './test'),
     },
   },
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: ['src/setupTests.ts'],
+    setupFiles: ['test/test.setup.ts'],
   },
   build: {
     sourcemap: true,
@@ -32,6 +33,7 @@ export default defineConfig({
       // devOptions: {
       //   enabled: true
       // },
+      disable: process.env.NODE_ENV === 'development',
       registerType: "autoUpdate", // prompt
       includeAssets: ['**/*'],
       manifest: {
