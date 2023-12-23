@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { forwardRef } from 'react';
 import { Spinner } from '../Spinner';
+import { log } from 'console';
 
 const variants = {
   success: 'bg-success text-white',
@@ -56,3 +57,4 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 
 
 Button.displayName = 'Button';
+

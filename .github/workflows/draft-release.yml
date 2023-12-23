@@ -1,0 +1,45 @@
+name: "draft new release"
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "The version you want to release."
+        required: true
+        default: "minor"
+        type: choice
+        options:
+          - major
+          - minor
+
+jobs:
+  draft-new-release:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Setup
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Git
+        run: |
+          git config user.name "Your GitHub User Name"
+          git config user.email "Your GitHub User Email"
+
+      # 2. Create release branch
+      - name: Update the version
+        id: update_version
+        run: |
+          echo "version=$(npm version ${{ github.event.inputs.version }} --no-git-tag-version)" >> $GITHUB_OUTPUT
+      - name: Update changelog
+        id: update_changelog
+        run: |
+          sed -i 's/Unreleased/${{ steps.update_version.outputs.version }}/g' CHANGELOG.md
+      - name: Create branch and pull request
+        id: create_pr
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          reviewers: ${{ github.actor }}
+          branch: release/${{ steps.update_version.outputs.version }}
+          title: "Release: ${{ steps.update_version.outputs.version }} Pull Request"
+          body: "This pull request contains the updated package.json with the new release version"
+          base: main

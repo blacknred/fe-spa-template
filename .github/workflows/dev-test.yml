@@ -1,0 +1,38 @@
+name: "run tests for dev"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened] # synchronize is target feature branch update
+    branches: [dev]
+
+concurrency:
+  group: ci-dev-test-${{ github.ref }}
+  cancel-in-progress: true # start latest instead of current
+
+jobs:
+  dev-test:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Setup
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+      - name: Cache dependencies to speed up the build
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # 2. Run Tests
+      - name: Run Unit & Integration Tests
+        run: mv .env.example .env.local; npm run install; npm run build; npm run lint; npm run test;
+      - name: Run E2E Tests
+        uses: cypress-io/github-action@v5
+        with:
+          build: yarn build
+          start: yarn serve

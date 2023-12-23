@@ -1,0 +1,109 @@
+name: "run tests & deploy to prod"
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+concurrency:
+  group: ci-release-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  prod-deploy:
+    runs-on: ubuntu-latest
+    environment: prod # uses secrets from prod environment
+    permissions:
+      pull-requests: read
+    outputs:
+      VERSION: ${{ steps.variables.outputs.VERSION }}
+    steps:
+      # 1. Setup
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+      - name: Extract release version from branch name
+        if: contains(toJSON(github.head_ref), 'release/')
+        run: |
+          BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
+          VERSION=${BRANCH_NAME#release/}
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+      - name: Extract hotfix version from branch name
+        if: contains(toJSON(github.head_ref), 'hotfix/')
+        run: |
+          BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
+          VERSION=${BRANCH_NAME#hotfix/}
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      # 2. Build
+      - name: Build
+        run: npm run install; npm run build;
+      
+      # 3. Deploy
+      - name: Deploy
+        run: echo "daily pull deployment"
+
+      # 4. Notify
+      - name: Notify slack success
+        if: success()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          channel: app-alerts
+          status: SUCCESS
+          color: good
+      - name: Notify slack fail
+        if: failure()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          channel: app-alerts
+          status: FAILED
+          color: danger
+
+  prod-create-release:
+    needs: [prod-deploy]
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Setup
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Create release
+      - name: Create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          RELEASE_VERSION=${{ needs.prod-deploy.outputs.VERSION }}
+          git tag -a $RELEASE_VERSION -m "release: $RELEASE_VERSION"
+          git push origin $RELEASE_VERSION
+          gh release create $RELEASE_VERSION --title "$RELEASE_VERSION" --generate-notes
+
+  prod-create-pull-request:
+    needs: [prod-deploy]
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Setup
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: develop
+          fetch-depth: 0
+
+      # 2. Create PR to dev for hotfix
+      - name: Open PR to merge main into dev branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          RELEASE_VERSION=${{ needs.prod-deploy.outputs.VERSION }}
+          BRANCH_NAME="merge/$RELEASE_VERSION"
+          git checkout -b $BRANCH_NAME
+          git merge origin/main
+          git commit --allow-empty -am "Merge main into dev"
+          git push origin "$BRANCH_NAME"
+          gh pr create --base develop --head "$BRANCH_NAME" --title "Merge - $RELEASE_VERSION" --fill

@@ -51,7 +51,7 @@ export const loadDb = () =>
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   JSON.parse(window.localStorage.getItem(DB_KEY) || '{}');
 
-export const resetDb = () => window.localStorage.clear();
+export const resetDb = () => window.localStorage.removeItem(DB_KEY);
 
 export const initializeDb = () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment

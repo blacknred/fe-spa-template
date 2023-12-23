@@ -1,0 +1,64 @@
+name: "deploy to dev"
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [dev]
+
+concurrency:
+  group: ci-deploy-dev-${{ github.ref }}
+  cancel-in-progress: true # start latest instead of current
+
+jobs:
+  dev-deploy:
+    runs-on: ubuntu-latest
+    environment: dev # uses secrets from dev environment
+    permissions:
+      pull-requests: read
+    if: github.event.pull_request.merged == true # avoid cases when PR is closed without merging
+    steps:
+      # 1. Setup
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+      - name: Cache dependencies to speed up the build
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # 2. Build
+      - name: Build
+        run: npm run install; npm run build;
+
+      # 3. Deploy(push)
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+
+      # 4. Notify
+      - name: Notify slack success
+        if: success()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          channel: app-alerts
+          status: SUCCESS
+          color: good
+      - name: Notify slack fail
+        if: failure()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          channel: app-alerts
+          status: FAILED
+          color: danger

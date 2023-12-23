@@ -1,0 +1,89 @@
+name: "run tests & deploy to staging"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened] # synchronize is hotfix branch update
+    branches: [main]
+
+concurrency:
+  group: ci-deploy-rc-${{ github.ref }}
+  cancel-in-progress: true # start latest instead of current
+
+jobs:
+  staging-test:
+    if: | # only PR for release/hotfix is allowed
+      contains(toJSON(github.head_ref), 'release/')
+      || contains(toJSON(github.head_ref), 'hotfix/')
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Setup
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      # 2. Run Tests
+      - name: Run Unit & Integration Tests
+        run: mv .env.example .env.local; npm run install; npm run build; npm run lint; npm run test;
+      - name: Run E2E Tests
+        uses: cypress-io/github-action@v5
+        with:
+          build: yarn build
+          start: yarn serve
+
+  staging-deploy:
+    needs: [staging-test]
+    runs-on: ubuntu-latest
+    environment: staging # uses secrets from staging environment
+    permissions:
+      pull-requests: read
+    steps:
+      # 1. Setup
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+      - name: Extract release version from branch name
+        if: contains(toJSON(github.head_ref), 'release/')
+        run: |
+          BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
+          VERSION=${BRANCH_NAME#release/}
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+      - name: Extract hotfix version from branch name
+        if: contains(toJSON(github.head_ref), 'hotfix/')
+        run: |
+          BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
+          VERSION=${BRANCH_NAME#hotfix/}
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      # 2. Build
+      - name: Build
+        run: npm run install; npm run build;
+
+      # 3. Deploy
+      - name: Deploy
+        run: echo "daily pull deployment"
+
+      # 4. Notify
+      - name: Notify slack success
+        if: success()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          channel: app-alerts
+          status: SUCCESS
+          color: good
+      - name: Notify slack fail
+        if: failure()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          channel: app-alerts
+          status: FAILED
+          color: danger
